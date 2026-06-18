@@ -9,7 +9,6 @@ Personal portfolio website for junior web developer, WordPress developer, React 
 - Responsive Design
 - SEO meta tags
 - Schema markup
-
 ## Customize Before Publishing
 - Replace `your-email@example.com`
 - Replace GitHub link
