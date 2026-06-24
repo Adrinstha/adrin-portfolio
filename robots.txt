@@ -1,0 +1,8 @@
+# Robots.txt for https://adrinshrestha.com.np/
+# Optimized for search engines & AI crawlers
+
+User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://adrinshrestha.com.np/sitemap.xml

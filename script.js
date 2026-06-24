@@ -1,7 +1,5 @@
 (function() {
   'use strict';
-
-  // Mobile menu toggle logic
   document.addEventListener('DOMContentLoaded', () => {
     const toggle = document.querySelector('.menu-toggle');
     const links = document.querySelector('.nav-links');
@@ -21,7 +19,6 @@
     }
   });
 
-  // Secret Game (SEO Breaker) Context
   let canvas = null;
   let ctx = null;
   let gameInterval = null;
