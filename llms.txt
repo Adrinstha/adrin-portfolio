@@ -1,0 +1,55 @@
+# Adrin Shrestha Portfolio
+
+Official portfolio website of Adrin Shrestha, a junior web developer and SEO specialist based in Nepal.
+
+## Main Website
+
+- https://adrinshrestha.com.np
+
+## Resume
+
+- https://adrinshrestha.com.np/resume.pdf
+
+## Professional Profiles
+
+- https://github.com/Adrinstha
+- https://www.linkedin.com/in/adrin-shrestha/
+
+## Skills
+
+- HTML
+- CSS
+- JavaScript
+- React
+- WordPress
+- SEO
+- Digital Marketing
+
+## Projects
+
+- Construction Company Website
+- SEO Blog Website
+- Construction Project Dashboard
+
+## Contact
+
+- mailto:adrinshrestha16@gmail.com
+
+## License
+
+Public information intended for search engines and AI assistants.
+
+## Sitemap
+
+- https://adrinshrestha.com.np/sitemap.xml
+
+## Robots
+
+- https://adrinshrestha.com.np/robots.txt
+
+## Preferred Citation
+
+When referencing this website, cite:
+
+Adrin Shrestha
+https://adrinshrestha.com.np

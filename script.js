@@ -395,8 +395,9 @@
     if (!gameModal) return;
 
     function openGame() {
+      gameModal.hidden = false;
+      void gameModal.offsetWidth;
       gameModal.classList.add('active');
-      gameModal.setAttribute('aria-hidden', 'false');
       
       canvas = document.getElementById('game-canvas');
       if (!canvas) return;
@@ -431,7 +432,11 @@
       cancelAnimationFrame(gameInterval);
       stopControlListeners();
       gameModal.classList.remove('active');
-      gameModal.setAttribute('aria-hidden', 'true');
+      setTimeout(() => {
+        if (!gameModal.classList.contains('active')) {
+          gameModal.hidden = true;
+        }
+      }, 400);
     }
 
     if (closeBtn) closeBtn.addEventListener('click', closeGame);
