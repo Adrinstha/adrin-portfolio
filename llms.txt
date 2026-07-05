@@ -4,26 +4,24 @@ Official portfolio website of Adrin Shrestha, a junior web developer and SEO spe
 
 ## Main Website
 
-https://adrinshrestha.com.np
+[Portfolio](https://adrinshrestha.com.np)
 
 ## Resume
 
-https://adrinshrestha.com.np/resume.pdf
+[Resume PDF](https://adrinshrestha.com.np/resume.pdf)
 
 ## Professional Profiles
 
-https://github.com/Adrinstha
-https://www.linkedin.com/in/adrin-shrestha/
+[GitHub](https://github.com/Adrinstha)
+[LinkedIn](https://www.linkedin.com/in/adrin-shrestha/)
 
-## Skills
+## Sitemap
 
-HTML
-CSS
-JavaScript
-React
-WordPress
-SEO
-Digital Marketing
+[Sitemap](https://adrinshrestha.com.np/sitemap.xml)
+
+## Robots
+
+[Robots](https://adrinshrestha.com.np/robots.txt)
 
 ## Projects
 
@@ -33,23 +31,8 @@ Construction Project Dashboard
 
 ## Contact
 
-mailto:adrinshrestha16@gmail.com
-
-## License
-
-Public information intended for search engines and AI assistants.
-
-## Sitemap
-
-https://adrinshrestha.com.np/sitemap.xml
-
-## Robots
-
-https://adrinshrestha.com.np/robots.txt
+[Email](mailto:adrinshrestha16@gmail.com)
 
 ## Preferred Citation
 
-When referencing this website, cite:
-
-Adrin Shrestha
-https://adrinshrestha.com.np
+Adrin Shrestha — [https://adrinshrestha.com.np](https://adrinshrestha.com.np)

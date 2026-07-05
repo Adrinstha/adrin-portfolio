@@ -1,13 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
 :root {
-  --bg: #0f172a;
-  --card: #ffffff;
-  --text: #101827;
-  --muted: #64748b;
-  --light: #f8fafc;
+  --bg: #080f1e;
+  --card: rgba(11, 18, 30, 0.94);
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --light: #111827;
   --brand: #f97316;
-  --brand-dark: #c2410c;
-  --border: #e2e8f0;
-  --shadow: 0 18px 45px rgba(15, 23, 42, 0.12);
+  --brand-dark: #ea580c;
+  --border: rgba(255, 255, 255, 0.08);
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(249, 115, 22, 0.25);
+  border-radius: 999px;
+  border: 2px solid var(--bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(249, 115, 22, 0.5);
 }
 
 * {
@@ -19,21 +37,35 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  font-family:
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    Oxygen,
-    Ubuntu,
-    Cantarell,
-    "Open Sans",
-    "Helvetica Neue",
-    sans-serif;
+  font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   color: var(--text);
-  background: var(--light);
+  background: linear-gradient(135deg, #08111f, #111827 55%, #251915);
   line-height: 1.6;
+}
+.noise {
+  display: none;
+}
+
+.cursor-glow {
+  width: 260px;
+  height: 260px;
+  background: rgba(249, 115, 22, 0.14);
+  filter: blur(80px);
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  will-change: transform;
+  top: 0;
+  left: 0;
+}
+
+@media (pointer: coarse) {
+  .cursor-glow {
+    display: none !important;
+  }
 }
 a {
   color: inherit;
@@ -214,7 +246,7 @@ h1 {
 
 .stats {
   padding: 32px 0;
-  background: var(--card);
+  background: transparent;
 }
 .stats-grid {
   display: grid;
@@ -225,15 +257,22 @@ h1 {
   padding: 22px;
   border: 1px solid var(--border);
   border-radius: 20px;
-  background: var(--light);
+  background: var(--card);
+  backdrop-filter: blur(12px);
 }
 .stats strong {
   display: block;
   font-size: 1.6rem;
-  color: var(--bg);
+  color: var(--brand);
 }
 .stats span {
+  display: block;
   color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .section-heading {
@@ -262,12 +301,28 @@ h1 {
 .project-card,
 .skills-grid > div,
 .checklist,
-.timeline li {
+.timeline li,
+.info-card,
+.blog-card {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: 24px;
   padding: 28px;
-  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.05);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+.project-card:hover,
+.skills-grid > div:hover,
+.checklist:hover,
+.timeline li:hover,
+.info-card:hover,
+.blog-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(249, 115, 22, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
 }
 .project-card.featured {
   border-color: rgba(249, 115, 22, 0.5);
@@ -286,7 +341,8 @@ h1 {
 .project-card h3,
 .skills-grid h3,
 .checklist h3,
-.timeline h3 {
+.timeline h3,
+.info-card h3 {
   font-size: 1.25rem;
   margin-bottom: 10px;
 }
@@ -297,9 +353,11 @@ h1 {
   margin-bottom: 16px;
 }
 .project-card li,
+.info-card li,
+.blog-card li,
 .checklist li {
   margin-bottom: 8px;
-  color: #334155;
+  color: var(--muted);
 }
 
 .skills-grid {
@@ -312,13 +370,6 @@ h1 {
   grid-template-columns: 1fr 0.9fr;
   gap: 42px;
   align-items: center;
-}
-.checklist {
-  background: var(--bg);
-  color: #fff;
-}
-.checklist li {
-  color: #dbeafe;
 }
 .timeline {
   display: grid;
@@ -427,202 +478,113 @@ h1 {
   }
 }
 
-#logo-dot {
-  cursor: help;
+.nav-links a.active {
+  color: var(--brand);
+  position: relative;
 }
-#avatar-egg {
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-#avatar-egg:active {
-  transform: scale(0.95);
-}
-
-.game-modal {
-  position: fixed;
-  top: 0;
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
   left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 1000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  height: 2px;
+  background: var(--brand);
+  border-radius: 2px;
 }
 
-.game-modal.active {
-  opacity: 1;
-  pointer-events: all;
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 40px;
 }
 
-.game-modal-backdrop {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-
-.game-container {
-  position: relative;
-  width: min(460px, 94%);
-  background: #0f172a;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 24px;
-  padding: 24px;
-  box-shadow: var(--shadow);
-  transform: translateY(20px) scale(0.95);
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 1010;
+.page-hero {
+  background:
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(249, 115, 22, 0.15),
+      transparent 40%
+    ),
+    linear-gradient(135deg, #090f1e, #131b2e);
   color: #fff;
+  padding: 120px 0 60px;
+  border-bottom: 1px solid var(--border);
 }
 
-.game-modal.active .game-container {
-  transform: translateY(0) scale(1);
-}
-
-.game-close-btn {
-  position: absolute;
-  top: 14px;
-  right: 18px;
-  background: transparent;
-  border: none;
-  color: #64748b;
-  font-size: 2rem;
-  cursor: pointer;
-  transition: color 0.2s ease;
-  z-index: 1020;
-  line-height: 1;
-}
-
-.game-close-btn:hover {
-  color: #fff;
-}
-
-.game-cabinet {
-  margin-top: 12px;
-}
-
-.crt-screen {
-  position: relative;
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-/* Game Header */
-.game-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 12px;
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
   margin-bottom: 16px;
-}
-
-.game-header h2 {
-  font-size: 1.25rem;
-  font-weight: 800;
   color: #fff;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 0;
 }
 
-.game-stats {
-  display: flex;
-  gap: 16px;
-  font-size: 0.85rem;
-  color: #94a3b8;
+.page-hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  max-width: 720px;
 }
 
-.game-stat strong {
-  color: var(--brand);
-  font-weight: 700;
+.blog-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
 }
 
-.canvas-wrapper {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  background: #090d16;
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-#game-canvas {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.game-overlay-screen {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(15, 23, 42, 0.95);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 24px;
-  z-index: 15;
-  transition: opacity 0.3s ease;
-}
-
-.game-overlay-content {
-  max-width: 320px;
-}
-
-.game-overlay-content h3 {
-  font-size: 1.6rem;
-  font-weight: 800;
-  color: #fff;
+.blog-card h2 {
+  font-size: 1.4rem;
   margin-bottom: 12px;
-  letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
-.game-overlay-content p {
-  color: #94a3b8;
-  font-size: 0.85rem;
-  line-height: 1.6;
-  margin-bottom: 24px;
+.blog-card h2 a {
+  color: var(--text);
+  transition: color 0.2s ease;
 }
 
-.game-footer {
-  margin-top: 14px;
-  font-size: 0.85rem;
+.blog-card h2 a:hover {
   color: var(--brand);
-  text-align: center;
-  height: 20px;
-  font-weight: 600;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
-.game-instructions {
-  margin-top: 16px;
-  text-align: center;
-  color: #64748b;
-  font-size: 0.75rem;
+.blog-card p {
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 0.95rem;
 }
 
-.game-instructions kbd {
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #e2e8f0;
-  padding: 2px 6px;
-  border-radius: 4px;
-  font-family: inherit;
-  font-size: 0.7rem;
+.article-content {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.article-content h2,
+.article-content h3 {
+  color: #fff;
+  margin: 36px 0 16px;
+  letter-spacing: -0.03em;
+}
+
+.article-content h2 {
+  font-size: 1.8rem;
+}
+
+.article-content p {
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
+.article-content ul,
+.article-content ol {
+  margin-bottom: 24px;
+  padding-left: 24px;
+}
+
+.article-content li {
+  margin-bottom: 12px;
+  color: var(--muted);
 }
