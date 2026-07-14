@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Semantic HTML for SEO: Complete Guide with Examples | Adrin Shrestha</title>
+  <meta name="description" content="Learn how semantic HTML improves SEO, accessibility and website structure with practical HTML5 examples, best practices and a developer checklist." />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://adrinshrestha.com.np/blog/semantic-html-for-seo.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Semantic HTML for SEO: Complete Guide with Examples" />
+  <meta property="og:description" content="Learn how semantic HTML improves page structure, accessibility, maintainability and search visibility." />
+  <meta property="og:url" content="https://adrinshrestha.com.np/blog/semantic-html-for-seo.html" />
+  <meta property="og:image" content="https://adrinshrestha.com.np/images/semantic-html-for-seo-cover.webp" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Semantic HTML for SEO: Complete Guide" />
+  <meta name="twitter:description" content="Learn semantic HTML with practical examples, SEO benefits, accessibility guidance and a developer checklist." />
+  <meta name="twitter:image" content="https://adrinshrestha.com.np/images/semantic-html-for-seo-cover.webp" />
+  <link rel="stylesheet" href="../style.css?v=1.3">
+  <link rel="icon" type="image/png" href="../icon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Semantic HTML for SEO: Complete Guide with Examples",
+    "description": "Learn how semantic HTML improves SEO, accessibility and website structure with practical HTML5 examples, best practices and a developer checklist.",
+    "image": "https://adrinshrestha.com.np/images/semantic-html-for-seo-cover.webp",
+    "author": {
+      "@type": "Person",
+      "name": "Adrin Shrestha",
+      "url": "https://adrinshrestha.com.np/about.html"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Adrin Shrestha"
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://adrinshrestha.com.np/blog/semantic-html-for-seo.html"
+    },
+    "datePublished": "2026-07-12",
+    "dateModified": "2026-07-12"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://adrinshrestha.com.np/index.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Blog",
+        "item": "https://adrinshrestha.com.np/blog.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Semantic HTML for SEO",
+        "item": "https://adrinshrestha.com.np/blog/semantic-html-for-seo.html"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is semantic HTML?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Semantic HTML uses HTML elements according to their meaning and purpose. Elements such as header, nav, main, article and footer describe content more clearly than generic div elements."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Does semantic HTML improve SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Semantic HTML can support SEO by creating a clearer page structure, improving accessibility and making content easier to crawl and maintain."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the difference between semantic HTML and a div?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A div is a generic container with no built-in meaning. Semantic elements such as article, nav and main describe the purpose of their content."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Should every section use the section element?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Use section for a meaningful thematic group that normally has a heading. Use div for layout or styling wrappers."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is semantic HTML important for accessibility?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Semantic HTML creates landmarks and expected controls that help screen-reader and keyboard users navigate a page."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="cursor-glow"></div>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a href="../index.html" class="logo">Adrin<span>.</span></a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false"><span aria-hidden="true">☰</span></button>
+      <ul class="nav-links">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../services.html">Services</a></li>
+        <li><a href="../blog.html" class="active">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+        <li><a href="../resume.pdf" target="_blank">Resume</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">Home</a> &gt; <a href="../blog.html">Blog</a> &gt; Semantic HTML for SEO
+        </nav>
+        <p class="eyebrow">HTML · Technical SEO · Accessibility</p>
+        <h1>Semantic HTML for SEO: Complete Guide with Examples</h1>
+        <p class="intro">Learn how semantic HTML improves page structure, accessibility, maintainability and search visibility—and how to use modern HTML5 elements correctly in real projects.</p>
+        <div class="meta">
+          <span>By Adrin Shrestha</span>
+          <span>•</span>
+          <time datetime="2026-07-12">July 12, 2026</time>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <article class="container article-content">
+        <section class="summary-box" aria-labelledby="quick-answer">
+          <h2 id="quick-answer">Quick Answer</h2>
+          <p><strong>Semantic HTML</strong> is the practice of using HTML elements according to their meaning and purpose. Elements such as <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code> and <code>&lt;footer&gt;</code> describe the role of content more clearly than generic <code>&lt;div&gt;</code> containers.</p>
+        </section>
+
+        <section class="toc" aria-labelledby="table-of-contents">
+          <h2 id="table-of-contents">Table of Contents</h2>
+          <ol>
+            <li><a href="#what-is-semantic-html">What is semantic HTML?</a></li>
+            <li><a href="#why-semantic-html-matters-for-seo">Why semantic HTML matters for SEO</a></li>
+            <li><a href="#semantic-vs-non-semantic">Semantic HTML vs non-semantic HTML</a></li>
+            <li><a href="#essential-elements">Essential HTML5 semantic elements</a></li>
+            <li><a href="#real-example">Real semantic HTML page example</a></li>
+            <li><a href="#accessibility">Semantic HTML and accessibility</a></li>
+            <li><a href="#heading-hierarchy">Semantic headings and SEO</a></li>
+            <li><a href="#best-practices">Semantic HTML best practices</a></li>
+            <li><a href="#common-mistakes">Common semantic HTML mistakes</a></li>
+            <li><a href="#react">Semantic HTML in React</a></li>
+            <li><a href="#checklist">Semantic HTML checklist</a></li>
+            <li><a href="#internal-links">Internal linking and topical authority</a></li>
+            <li><a href="#faqs">FAQs</a></li>
+          </ol>
+        </section>
+
+        <section id="what-is-semantic-html">
+          <h2>What is semantic HTML?</h2>
+          <p>Semantic HTML refers to elements whose names communicate the meaning or role of their content.</p>
+          <pre><code>&lt;div class="navigation"&gt;...&lt;/div&gt;
+
+&lt;nav aria-label="Primary navigation"&gt;...&lt;/nav&gt;</code></pre>
+          <p>Both elements can look identical after CSS is applied. Structurally, however, the <code>&lt;nav&gt;</code> element communicates that the links form an important navigation block.</p>
+          <p>Common semantic elements include <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;aside&gt;</code>, <code>&lt;footer&gt;</code>, <code>&lt;figure&gt;</code>, <code>&lt;figcaption&gt;</code> and <code>&lt;time&gt;</code>.</p>
+        </section>
+
+        <section id="why-semantic-html-matters-for-seo">
+          <h2>Why semantic HTML matters for SEO</h2>
+          <p>Semantic HTML supports SEO by helping create pages that are easier to interpret, navigate and maintain. Search engines do not rank a page simply because it uses one HTML5 tag, but meaningful markup improves the technical foundation of the page.</p>
+
+          <h3>It creates a clearer content structure</h3>
+          <p>A page with one clear <code>&lt;main&gt;</code> area, a logical article container and well-organized headings is easier to understand than a page made from dozens of anonymous wrappers.</p>
+
+          <h3>It supports accessibility</h3>
+          <p>Semantic landmarks help screen-reader users jump directly to navigation, main content or complementary information. Accessibility and SEO both benefit from clear content, meaningful links and understandable headings.</p>
+
+          <h3>It improves maintainability</h3>
+          <p>Clean structure helps developers add internal links, update content, improve metadata and preserve heading hierarchy without creating unnecessary complexity.</p>
+
+          <h3>It reduces unnecessary markup</h3>
+          <p>Semantic elements often reduce excessive nesting and class names, making the codebase easier to debug and less likely to develop structural errors.</p>
+
+          <div class="summary-box">
+            <p><strong>Important:</strong> Semantic HTML does not replace helpful content, metadata, internal linking, structured data or website performance. It strengthens the foundation on which these SEO elements are built.</p>
+          </div>
+        </section>
+
+        <section id="semantic-vs-non-semantic">
+          <h2>Semantic HTML vs non-semantic HTML</h2>
+          <table>
+            <thead><tr><th>Semantic HTML</th><th>Non-semantic HTML</th></tr></thead>
+            <tbody>
+              <tr><td>Describes the purpose of content</td><td>Acts as a generic container</td></tr>
+              <tr><td>Examples: <code>nav</code>, <code>main</code>, <code>article</code></td><td>Examples: <code>div</code>, <code>span</code></td></tr>
+              <tr><td>Creates useful accessibility landmarks</td><td>Usually needs additional context</td></tr>
+              <tr><td>Makes code easier to understand</td><td>Can become difficult to interpret</td></tr>
+              <tr><td>Encourages logical document structure</td><td>Often encourages layout-first markup</td></tr>
+            </tbody>
+          </table>
+          <p>Non-semantic elements are not bad. Use <code>&lt;div&gt;</code> and <code>&lt;span&gt;</code> when no semantic element describes the content accurately.</p>
+        </section>
+
+        <section id="essential-elements">
+          <h2>Essential HTML5 semantic elements</h2>
+
+          <h3>The <code>&lt;header&gt;</code> element</h3>
+          <p>Use <code>&lt;header&gt;</code> for introductory content. A site header may contain branding and navigation. An article header may contain the title, author and publication date.</p>
+          <pre><code>&lt;article&gt;
+  &lt;header&gt;
+    &lt;h1&gt;Semantic HTML for SEO&lt;/h1&gt;
+    &lt;p&gt;Written by Adrin Shrestha&lt;/p&gt;
+  &lt;/header&gt;
+  &lt;p&gt;Article content...&lt;/p&gt;
+&lt;/article&gt;</code></pre>
+
+          <h3>The <code>&lt;nav&gt;</code> element</h3>
+          <p>Use <code>&lt;nav&gt;</code> for major navigation blocks such as primary navigation, breadcrumbs, pagination and a table of contents.</p>
+          <pre><code>&lt;nav aria-label="Primary navigation"&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;a href="/"&gt;Home&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/blog"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;a href="/contact"&gt;Contact&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+          <h3>The <code>&lt;main&gt;</code> element</h3>
+          <p>The <code>&lt;main&gt;</code> element contains the primary content. In most cases, a document should contain one visible main element.</p>
+
+          <h3>The <code>&lt;article&gt;</code> element</h3>
+          <p>Use <code>&lt;article&gt;</code> for independently meaningful content such as blog posts, news stories, product reviews, forum posts or complete content cards.</p>
+
+          <h3>The <code>&lt;section&gt;</code> element</h3>
+          <p>Use <code>&lt;section&gt;</code> for a thematic grouping of content. A section should normally have a heading.</p>
+          <pre><code>&lt;section aria-labelledby="performance-heading"&gt;
+  &lt;h2 id="performance-heading"&gt;Website Performance&lt;/h2&gt;
+  &lt;p&gt;Learn how image optimization and caching improve loading speed.&lt;/p&gt;
+&lt;/section&gt;</code></pre>
+
+          <h3>The <code>&lt;aside&gt;</code> element</h3>
+          <p>Use <code>&lt;aside&gt;</code> for complementary content such as related articles, author information, supporting definitions or contextual calls to action.</p>
+
+          <h3>The <code>&lt;footer&gt;</code> element</h3>
+          <p>A footer contains closing information for its nearest sectioning element. A site footer may include copyright and contact links; an article footer may contain tags or author details.</p>
+
+          <h3>The <code>&lt;figure&gt;</code> and <code>&lt;figcaption&gt;</code> elements</h3>
+          <p>Use these elements for self-contained media and visible captions.</p>
+          <pre><code>&lt;figure&gt;
+  &lt;img
+    src="../images/semantic-html-structure.webp"
+    alt="Semantic HTML layout with header, nav, main, article and footer"
+    width="1200"
+    height="675"
+    loading="lazy"
+  &gt;
+  &lt;figcaption&gt;A basic semantic structure for a content page.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+          <h3>The <code>&lt;time&gt;</code> element</h3>
+          <pre><code>&lt;time datetime="2026-07-12"&gt;July 12, 2026&lt;/time&gt;</code></pre>
+          <p>The visible format remains friendly while the machine-readable value is precise.</p>
+        </section>
+
+        <section id="real-example">
+          <h2>Real semantic HTML page example</h2>
+          <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Semantic HTML for SEO: Complete Guide&lt;/title&gt;
+  &lt;meta name="description" content="Learn how semantic HTML supports SEO and accessibility."&gt;
+  &lt;link rel="canonical" href="https://example.com/blog/semantic-html-for-seo"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;a href="#main-content"&gt;Skip to main content&lt;/a&gt;
+  &lt;header&gt;
+    &lt;a href="/"&gt;Developer Portfolio&lt;/a&gt;
+    &lt;nav aria-label="Primary navigation"&gt;
+      &lt;a href="/"&gt;Home&lt;/a&gt;
+      &lt;a href="/blog"&gt;Blog&lt;/a&gt;
+      &lt;a href="/contact"&gt;Contact&lt;/a&gt;
+    &lt;/nav&gt;
+  &lt;/header&gt;
+  &lt;main id="main-content"&gt;
+    &lt;article&gt;
+      &lt;header&gt;
+        &lt;h1&gt;Semantic HTML for SEO&lt;/h1&gt;
+        &lt;time datetime="2026-07-12"&gt;July 12, 2026&lt;/time&gt;
+      &lt;/header&gt;
+      &lt;section aria-labelledby="definition"&gt;
+        &lt;h2 id="definition"&gt;What is semantic HTML?&lt;/h2&gt;
+        &lt;p&gt;Semantic HTML uses meaningful elements to describe content structure.&lt;/p&gt;
+      &lt;/section&gt;
+    &lt;/article&gt;
+    &lt;aside aria-labelledby="related"&gt;
+      &lt;h2 id="related"&gt;Related guides&lt;/h2&gt;
+      &lt;a href="/blog/seo-for-web-developers"&gt;SEO for web developers&lt;/a&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+  &lt;footer&gt;&lt;p&gt;&amp;copy; 2026 Developer Portfolio&lt;/p&gt;&lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+        </section>
+
+        <section id="accessibility">
+          <h2>Semantic HTML and accessibility</h2>
+          <p>Semantic HTML provides useful accessibility behavior before custom ARIA attributes are added. Screen readers can identify landmarks such as navigation, main content and complementary information.</p>
+          <h3>Use a real button for actions</h3>
+          <pre><code>&lt;button type="button" aria-expanded="false" aria-controls="mobile-menu"&gt;
+  Open menu
+&lt;/button&gt;</code></pre>
+          <h3>Use a real link for navigation</h3>
+          <pre><code>&lt;a href="/blog/seo-for-web-developers"&gt;
+  Read the SEO for web developers guide
+&lt;/a&gt;</code></pre>
+          <h3>Do not recreate native controls unnecessarily</h3>
+          <pre><code>&lt;!-- Avoid --&gt;
+&lt;div class="button" onclick="submitForm()"&gt;Submit&lt;/div&gt;
+
+&lt;!-- Prefer --&gt;
+&lt;button type="submit"&gt;Submit&lt;/button&gt;</code></pre>
+        </section>
+
+        <section id="heading-hierarchy">
+          <h2>Semantic headings and SEO</h2>
+          <p>Use one clear H1 for the page topic, H2 headings for major sections and H3 headings for supporting subsections.</p>
+          <pre><code>&lt;h1&gt;Main page topic&lt;/h1&gt;
+&lt;h2&gt;Main section&lt;/h2&gt;
+&lt;h3&gt;Subsection&lt;/h3&gt;
+&lt;h2&gt;Another main section&lt;/h2&gt;</code></pre>
+          <p>Do not choose headings based on font size. Use CSS for appearance and HTML for structure.</p>
+        </section>
+
+        <section id="best-practices">
+          <h2>Semantic HTML best practices</h2>
+          <ul>
+            <li>Choose meaning before styling.</li>
+            <li>Use one visible <code>&lt;main&gt;</code> element.</li>
+            <li>Give meaningful sections useful headings.</li>
+            <li>Use descriptive internal-link anchor text.</li>
+            <li>Use native HTML before adding ARIA.</li>
+            <li>Validate nesting, IDs, labels and headings.</li>
+            <li>Test the page with keyboard navigation.</li>
+          </ul>
+        </section>
+
+        <section id="common-mistakes">
+          <h2>Common semantic HTML mistakes</h2>
+          <h3>Using divs for everything</h3>
+          <p>A page built entirely from <code>&lt;div&gt;</code> elements hides its document structure.</p>
+          <h3>Using section as a styling wrapper</h3>
+          <p>Use section only for a meaningful topic. Use div for grid, flex or spacing wrappers.</p>
+          <h3>Using article for incomplete blocks</h3>
+          <p>An article should stand independently. Decorative fragments usually do not need article markup.</p>
+          <h3>Skipping heading levels for visual design</h3>
+          <p>Keep heading levels logical and style them with CSS.</p>
+          <h3>Using links as buttons</h3>
+          <p>A link navigates. A button performs an action.</p>
+        </section>
+
+        <section id="react">
+          <h2>Semantic HTML in React</h2>
+          <p>React supports the same semantic HTML elements through JSX. The main risk is using generic wrapper components everywhere or losing heading hierarchy across nested components.</p>
+          <pre><code>export default function BlogArticle() {
+  return (
+    &lt;main id="main-content"&gt;
+      &lt;article&gt;
+        &lt;header&gt;
+          &lt;h1&gt;Semantic HTML for SEO&lt;/h1&gt;
+          &lt;p&gt;A practical guide for frontend developers.&lt;/p&gt;
+        &lt;/header&gt;
+        &lt;section aria-labelledby="benefits-heading"&gt;
+          &lt;h2 id="benefits-heading"&gt;Benefits&lt;/h2&gt;
+          &lt;ul&gt;
+            &lt;li&gt;Clearer content structure&lt;/li&gt;
+            &lt;li&gt;Improved accessibility&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/section&gt;
+      &lt;/article&gt;
+    &lt;/main&gt;
+  );
+}</code></pre>
+        </section>
+
+        <section id="checklist">
+          <h2>Semantic HTML checklist</h2>
+          <div class="summary-box">
+            <ul>
+              <li>The page has one clear H1.</li>
+              <li>H2 and H3 headings follow a logical hierarchy.</li>
+              <li>The primary content is inside one visible <code>&lt;main&gt;</code>.</li>
+              <li>Major navigation blocks use <code>&lt;nav&gt;</code>.</li>
+              <li>Standalone content uses <code>&lt;article&gt;</code> where appropriate.</li>
+              <li>Thematic groups use <code>&lt;section&gt;</code> and have headings.</li>
+              <li>Complementary content uses <code>&lt;aside&gt;</code>.</li>
+              <li>Links describe their destinations.</li>
+              <li>Buttons are used for actions.</li>
+              <li>Images use useful alt text.</li>
+              <li>Form controls have labels.</li>
+              <li>ARIA is used only where native HTML is insufficient.</li>
+            </ul>
+          </div>
+        </section>
+
+        <section id="internal-links">
+          <h2>Internal linking and topical authority</h2>
+          <p>This article should connect directly to your broader developer-focused SEO cluster:</p>
+          <ul>
+            <li><a href="../blog/seo-for-web-developers.html">SEO for Web Developers</a></li>
+            <li><a href="../blog/web-development-nepal.html">Web Development in Nepal</a></li>
+            <li><a href="../about.html">About Adrin Shrestha</a></li>
+            <li><a href="../contact.html">Contact Adrin for web development and SEO services</a></li>
+          </ul>
+          <p>Future supporting articles should cover technical SEO checklists, HTML head tags, Core Web Vitals, React SEO, JavaScript SEO, image SEO and schema markup.</p>
+        </section>
+
+        <section id="faqs">
+          <h2>Frequently asked questions</h2>
+          <div class="faq-item">
+            <h3>What is semantic HTML?</h3>
+            <p>Semantic HTML uses elements according to their meaning and purpose. Examples include <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;main&gt;</code> and <code>&lt;article&gt;</code>.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Does semantic HTML improve SEO?</h3>
+            <p>It can support SEO by creating clearer structure, improving accessibility and making content easier to crawl and maintain.</p>
+          </div>
+          <div class="faq-item">
+            <h3>What is the difference between semantic HTML and a div?</h3>
+            <p>A div is a generic container. Semantic elements describe the role of the content they contain.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Should every section use the section element?</h3>
+            <p>No. Use section for meaningful thematic groups and div for layout or spacing wrappers.</p>
+          </div>
+          <div class="faq-item">
+            <h3>Is semantic HTML important for accessibility?</h3>
+            <p>Yes. It creates landmarks and expected control behavior for screen-reader and keyboard users.</p>
+          </div>
+        </section>
+
+        <section class="cta" aria-labelledby="cta-heading">
+          <h2 id="cta-heading">Need a fast, accessible and SEO-friendly website?</h2>
+          <p>I combine web development with practical technical SEO. Explore my portfolio or contact me to discuss a website, performance improvement or SEO project.</p>
+          <a class="btn primary" href="../contact.html">Contact Me</a>
+        </section>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner container">
+      <p>© 2026 Adrin Shrestha. Built with HTML, CSS and JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
