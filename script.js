@@ -1,8 +1,55 @@
 (function () {
   "use strict";
 
-  if (typeof gsap !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
+  const PRELOADER_FAILSAFE_MS = 4000;
+  let preloaderFailsafeId = null;
+
+  function clearPreloaderFailsafe() {
+    if (preloaderFailsafeId !== null) {
+      window.clearTimeout(preloaderFailsafeId);
+      preloaderFailsafeId = null;
+    }
+  }
+
+  function hidePreloader(immediate) {
+    const preloader = document.getElementById("preloader");
+    clearPreloaderFailsafe();
+
+    if (!preloader) {
+      return;
+    }
+
+    if (immediate) {
+      preloader.style.display = "none";
+      preloader.style.opacity = "0";
+      preloader.style.visibility = "hidden";
+      preloader.style.pointerEvents = "none";
+      return;
+    }
+
+    preloader.classList.add("is-hidden");
+
+    window.setTimeout(() => {
+      preloader.style.display = "none";
+    }, 650);
+  }
+
+  function startPreloaderFailsafe() {
+    clearPreloaderFailsafe();
+    preloaderFailsafeId = window.setTimeout(() => {
+      hidePreloader(false);
+    }, PRELOADER_FAILSAFE_MS);
+  }
+
+  
+  
+  startPreloaderFailsafe();
+
+  const hasGsap = typeof window.gsap !== "undefined";
+  const hasScrollTrigger = typeof window.ScrollTrigger !== "undefined";
+
+  if (hasGsap && hasScrollTrigger) {
+    window.gsap.registerPlugin(window.ScrollTrigger);
   }
 
   document.addEventListener("DOMContentLoaded", () => {
@@ -26,15 +73,18 @@
     const cursorGlow = document.querySelector(".cursor-glow");
     if (cursorGlow) {
       let tick = false;
-      document.addEventListener("mousemove", (e) => {
-        if (!tick) {
-          window.requestAnimationFrame(() => {
-            cursorGlow.style.transform = `translate3d(${e.clientX - 130}px, ${e.clientY - 130}px, 0)`;
-            cursorGlow.style.opacity = "1";
-            tick = false;
-          });
-          tick = true;
+
+      document.addEventListener("mousemove", (event) => {
+        if (tick) {
+          return;
         }
+
+        tick = true;
+        window.requestAnimationFrame(() => {
+          cursorGlow.style.transform = `translate3d(${event.clientX - 130}px, ${event.clientY - 130}px, 0)`;
+          cursorGlow.style.opacity = "1";
+          tick = false;
+        });
       });
 
       document.addEventListener("mouseleave", () => {
@@ -42,8 +92,13 @@
       });
     }
 
-    if (typeof gsap !== "undefined") {
-      const mainTimeline = gsap.timeline();
+    if (!hasGsap) {
+      hidePreloader(false);
+      return;
+    }
+
+    try {
+      const mainTimeline = window.gsap.timeline();
 
       mainTimeline
         .to(".preloader-progress", {
@@ -63,7 +118,7 @@
           ease: "power4.inOut",
         })
         .set("#preloader", { display: "none" })
-
+        .call(clearPreloaderFailsafe)
         .from(
           ".site-header",
           {
@@ -164,78 +219,79 @@
           );
       }
 
-      if (document.querySelector(".stats")) {
-        gsap.from(".stats-grid div", {
-          scrollTrigger: {
-            trigger: ".stats",
-            start: "top 85%",
-          },
-          y: 30,
-          opacity: 0,
-          stagger: 0.1,
-          duration: 0.8,
-          ease: "power2.out",
-        });
+      if (hasScrollTrigger) {
+        if (document.querySelector(".stats")) {
+          window.gsap.from(".stats-grid div", {
+            scrollTrigger: {
+              trigger: ".stats",
+              start: "top 85%",
+            },
+            y: 30,
+            opacity: 0,
+            stagger: 0.1,
+            duration: 0.8,
+            ease: "power2.out",
+          });
+        }
+
+        if (document.querySelector("#projects")) {
+          window.gsap.from(".project-card", {
+            scrollTrigger: {
+              trigger: "#projects",
+              start: "top 80%",
+            },
+            y: 50,
+            opacity: 0,
+            stagger: 0.15,
+            duration: 0.8,
+            ease: "power3.out",
+          });
+        }
+
+        if (document.querySelector("#skills")) {
+          window.gsap.from(".skills-grid > div", {
+            scrollTrigger: {
+              trigger: "#skills",
+              start: "top 80%",
+            },
+            y: 40,
+            opacity: 0,
+            stagger: 0.15,
+            duration: 0.8,
+            ease: "power3.out",
+          });
+        }
+
+        if (document.querySelector("#seo")) {
+          window.gsap.from(".seo-grid > div", {
+            scrollTrigger: {
+              trigger: "#seo",
+              start: "top 80%",
+            },
+            y: 40,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power3.out",
+          });
+        }
+
+        if (document.querySelector("#experience")) {
+          window.gsap.from(".timeline li", {
+            scrollTrigger: {
+              trigger: "#experience",
+              start: "top 80%",
+            },
+            x: -40,
+            opacity: 0,
+            stagger: 0.2,
+            duration: 0.8,
+            ease: "power2.out",
+          });
+        }
       }
 
-      if (document.querySelector("#projects")) {
-        gsap.from(".project-card", {
-          scrollTrigger: {
-            trigger: "#projects",
-            start: "top 80%",
-          },
-          y: 50,
-          opacity: 0,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: "power3.out",
-        });
-      }
-
-      if (document.querySelector("#skills")) {
-        gsap.from(".skills-grid > div", {
-          scrollTrigger: {
-            trigger: "#skills",
-            start: "top 80%",
-          },
-          y: 40,
-          opacity: 0,
-          stagger: 0.15,
-          duration: 0.8,
-          ease: "power3.out",
-        });
-      }
-
-      if (document.querySelector("#seo")) {
-        gsap.from(".seo-grid > div", {
-          scrollTrigger: {
-            trigger: "#seo",
-            start: "top 80%",
-          },
-          y: 40,
-          opacity: 0,
-          stagger: 0.2,
-          duration: 0.8,
-          ease: "power3.out",
-        });
-      }
-
-      if (document.querySelector("#experience")) {
-        gsap.from(".timeline li", {
-          scrollTrigger: {
-            trigger: "#experience",
-            start: "top 80%",
-          },
-          x: -40,
-          opacity: 0,
-          stagger: 0.2,
-          duration: 0.8,
-          ease: "power2.out",
-        });
-      }
-
-      const localLinks = document.querySelectorAll("a");
-      localLinks.forEach((link) => {
+      document.querySelectorAll("a").forEach((link) => {
         const href = link.getAttribute("href");
         const target = link.getAttribute("target");
 
@@ -249,14 +305,27 @@
             href.includes(".html#") ||
             href === "index.html")
         ) {
-          link.addEventListener("click", (e) => {
-            e.preventDefault();
+          link.addEventListener("click", (event) => {
+            const preloader = document.getElementById("preloader");
 
-            gsap.set("#preloader", { display: "flex", yPercent: 100 });
-            gsap.set(".preloader-content", { opacity: 1, y: 0 });
-            gsap.set(".preloader-progress", { scaleX: 1 });
+            if (!preloader) {
+              return;
+            }
 
-            gsap.to("#preloader", {
+            event.preventDefault();
+            preloader.classList.remove("is-hidden");
+            preloader.style.visibility = "visible";
+            preloader.style.pointerEvents = "auto";
+
+            window.gsap.set(preloader, {
+              display: "flex",
+              opacity: 1,
+              yPercent: 100,
+            });
+            window.gsap.set(".preloader-content", { opacity: 1, y: 0 });
+            window.gsap.set(".preloader-progress", { scaleX: 1 });
+
+            window.gsap.to(preloader, {
               yPercent: 0,
               duration: 0.6,
               ease: "power3.inOut",
@@ -267,12 +336,28 @@
           });
         }
       });
+    } catch (error) {
+      console.error("Animation initialization failed:", error);
+      hidePreloader(false);
     }
   });
 
+  
+  
   window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
-      window.location.reload();
+      hidePreloader(true);
+
+      const links = document.querySelector(".nav-links");
+      const toggle = document.querySelector(".menu-toggle");
+
+      if (links) {
+        links.classList.remove("open");
+      }
+
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+      }
     }
   });
 })();
