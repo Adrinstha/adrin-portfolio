@@ -34,6 +34,9 @@
       name="twitter:description"
       content="Contact Adrin Shrestha for junior web developer roles, internship opportunities, website projects and SEO support."
     />
+    <script data-cfasync="false">
+      document.documentElement.classList.add("js-enabled");
+    </script>
   </head>
   <body>
     <div class="preloader" id="preloader">
@@ -44,6 +47,21 @@
         </div>
       </div>
     </div>
+    <script data-cfasync="false">
+      setTimeout(function () {
+        var preloader = document.getElementById("preloader");
+
+        if (preloader) {
+          preloader.style.opacity = "0";
+          preloader.style.visibility = "hidden";
+          preloader.style.pointerEvents = "none";
+
+          setTimeout(function () {
+            preloader.style.display = "none";
+          }, 500);
+        }
+      }, 4000);
+    </script>
     <div class="noise"></div>
     <div class="cursor-glow"></div>
     <header class="site-header">
