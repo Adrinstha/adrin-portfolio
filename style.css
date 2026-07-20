@@ -148,7 +148,11 @@ img {
   border: none;
   cursor: pointer;
   padding: 0;
-  z-index: 101; 
+  z-index: 101;
+  flex-shrink: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .menu-toggle span {
@@ -159,6 +163,7 @@ img {
   background-color: var(--text);
   border-radius: 2px;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  pointer-events: none;
 }
 
 .menu-toggle span:nth-child(1) {
