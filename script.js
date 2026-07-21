@@ -236,23 +236,24 @@
         }
 
         if (document.querySelector("#projects")) {
-          window.gsap.from(".project-card", {
+          window.gsap.from(".project-grid > .project-card:not([style*='display: none'])", {
             scrollTrigger: {
               trigger: "#projects",
               start: "top 80%",
             },
-            y: 50,
+            y: 30,
             opacity: 0,
-            stagger: 0.15,
-            duration: 0.8,
-            ease: "power3.out",
+            stagger: 0.1,
+            duration: 0.6,
+            ease: "power2.out",
+            clearProps: "transform,opacity",
           });
         }
 
-        if (document.querySelector("#skills")) {
-          window.gsap.from(".skills-grid > div", {
+        if (document.querySelector("#principles")) {
+          window.gsap.from(".principles-grid > div", {
             scrollTrigger: {
-              trigger: "#skills",
+              trigger: "#principles",
               start: "top 80%",
             },
             y: 40,
@@ -263,15 +264,15 @@
           });
         }
 
-        if (document.querySelector("#seo")) {
-          window.gsap.from(".seo-grid > div", {
+        if (document.querySelector("#writing")) {
+          window.gsap.from(".writing-grid > article", {
             scrollTrigger: {
-              trigger: "#seo",
+              trigger: "#writing",
               start: "top 80%",
             },
             y: 40,
             opacity: 0,
-            stagger: 0.2,
+            stagger: 0.15,
             duration: 0.8,
             ease: "power3.out",
           });
@@ -337,6 +338,36 @@
           });
         }
       });
+      // Project classification tab filtering
+      const tabButtons = document.querySelectorAll(".project-tabs .tab-btn");
+      const projectCards = document.querySelectorAll(".project-grid .project-card");
+
+      if (tabButtons.length > 0 && projectCards.length > 0) {
+        tabButtons.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const filter = btn.getAttribute("data-filter");
+
+            tabButtons.forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+
+            projectCards.forEach((card) => {
+              const category = card.getAttribute("data-category");
+              if (filter === "all" || category === filter) {
+                card.style.display = "block";
+                if (window.gsap) {
+                  window.gsap.fromTo(
+                    card,
+                    { opacity: 0, y: 15 },
+                    { opacity: 1, y: 0, duration: 0.3, ease: "power2.out", clearProps: "transform,opacity" }
+                  );
+                }
+              } else {
+                card.style.display = "none";
+              }
+            });
+          });
+        });
+      }
     } catch (error) {
       console.error("Animation initialization failed:", error);
       hidePreloader(false);
