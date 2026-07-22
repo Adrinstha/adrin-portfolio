@@ -1,0 +1,282 @@
+﻿<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accessibility Statement | Adrin Shrestha</title>
+    <meta
+      name="description"
+      content="Accessibility Statement for Adrin Shrestha's portfolio. Details on WCAG 2.1 AA standards, keyboard navigation, semantic markup, and contrast accessibility."
+    />
+    <meta name="author" content="Adrin Shrestha" />
+    <meta
+      property="og:title"
+      content="Accessibility Statement | Adrin Shrestha"
+    />
+    <meta
+      property="og:description"
+      content="Commitment to web accessibility, WCAG 2.1 AA compliance, keyboard navigation, and inclusive design standards."
+    />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://adrinshrestha.com.np/accessibility"
+    />
+    <link rel="canonical" href="https://adrinshrestha.com.np/accessibility" />
+    <link rel="stylesheet" href="style.css?v=1.6" />
+    <link rel="icon" type="image/png" href="icon.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Accessibility Statement",
+        "url": "https://adrinshrestha.com.np/accessibility",
+        "description": "Accessibility Statement for Adrin Shrestha's portfolio detailing WCAG 2.1 AA compliance and inclusive design standards.",
+        "publisher": {
+          "@type": "Person",
+          "name": "Adrin Shrestha",
+          "url": "https://adrinshrestha.com.np"
+        }
+      }
+    </script>
+    <script data-cfasync="false">
+      document.documentElement.classList.add("js-enabled");
+    </script>
+  </head>
+  <body id="top">
+    <div class="preloader" id="preloader">
+      <div class="preloader-content">
+        <div class="preloader-logo">Adrin<span>.</span></div>
+        <div class="preloader-bar">
+          <div class="preloader-progress"></div>
+        </div>
+      </div>
+    </div>
+    <script data-cfasync="false">
+      setTimeout(function () {
+        var preloader = document.getElementById("preloader");
+        if (preloader) {
+          preloader.style.opacity = "0";
+          preloader.style.visibility = "hidden";
+          preloader.style.pointerEvents = "none";
+          setTimeout(function () {
+            preloader.style.display = "none";
+          }, 500);
+        }
+      }, 4000);
+    </script>
+    <div class="noise"></div>
+    <div class="cursor-glow"></div>
+
+    <header class="site-header">
+      <nav class="container nav" aria-label="Main navigation">
+        <a href="/" class="logo">Adrin<span>.</span></a>
+        <button
+          class="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/resume">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="section container" style="padding-top: 140px">
+      <article
+        class="accessibility-content"
+        style="max-width: 800px; margin: 0 auto"
+      >
+        <p class="eyebrow">WCAG 2.1 AA Commitment</p>
+        <h1 style="font-size: 2.5rem; margin-bottom: 16px">
+          Accessibility Statement
+        </h1>
+        <p style="color: var(--muted); font-size: 1.1rem; margin-bottom: 32px">
+          Adrin Shrestha is committed to ensuring digital accessibility for
+          people of all abilities. I continuously improve the user experience
+          for everyone and apply the relevant web accessibility standards.
+        </p>
+
+        <section style="margin-bottom: 32px">
+          <h2>Conformance Status</h2>
+          <p style="color: var(--muted); margin-top: 8px">
+            The
+            <strong>Web Content Accessibility Guidelines (WCAG)</strong> defines
+            requirements for designers and developers to improve accessibility
+            for people with disabilities. It defines three levels of
+            conformance: Level A, Level AA, and Level AAA. This website is fully
+            conformant with <strong>WCAG 2.1 Level AA</strong>.
+          </p>
+        </section>
+
+        <section style="margin-bottom: 32px">
+          <h2>Accessibility Features Implemented</h2>
+          <ul
+            style="
+              color: var(--muted);
+              padding-left: 20px;
+              margin-top: 12px;
+              display: flex;
+              flex-direction: column;
+              gap: 8px;
+            "
+          >
+            <li>
+              <strong>Semantic HTML5 Structure:</strong> Using native landmark
+              elements (<code>&lt;header&gt;</code>, <code>&lt;main&gt;</code>,
+              <code>&lt;nav&gt;</code>, <code>&lt;footer&gt;</code>,
+              <code>&lt;article&gt;</code>) to allow screen readers to navigate
+              content accurately.
+            </li>
+            <li>
+              <strong>Full Keyboard Navigation:</strong> All interactive
+              elements, links, buttons, and form components are fully accessible
+              via keyboard Tab key navigation with visible focus indicators.
+            </li>
+            <li>
+              <strong>Color Contrast Compliance:</strong> All text and graphical
+              elements meet or exceed WCAG 2.1 AA minimum contrast ratios (4.5:1
+              for standard text, 3:1 for large text).
+            </li>
+            <li>
+              <strong>ARIA Attributes &amp; States:</strong> Proper
+              <code>aria-label</code>, <code>aria-expanded</code>, and
+              <code>aria-hidden</code> markup applied across interactive mobile
+              menus, icons, and dynamic widgets.
+            </li>
+            <li>
+              <strong>Reduced Motion Support:</strong> CSS media queries respect
+              operating system preferences for reduced motion
+              (<code>prefers-reduced-motion</code>).
+            </li>
+            <li>
+              <strong>Scalable Typography:</strong> Text can be zoomed up to
+              200% without loss of content or functional layout breaks.
+            </li>
+          </ul>
+        </section>
+
+        <section style="margin-bottom: 32px">
+          <h2>Feedback &amp; Contact</h2>
+          <p style="color: var(--muted); margin-top: 8px">
+            I welcome your feedback on the accessibility of this portfolio. If
+            you encounter accessibility barriers or have suggestions for
+            improvement, please contact me:
+          </p>
+          <p style="margin-top: 12px; font-weight: 600">
+            Email:
+            <a
+              href="mailto:adrinshrestha16@gmail.com"
+              style="color: var(--brand)"
+              >adrinshrestha16@gmail.com</a
+            >
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="/" class="footer-logo">Adrin<span>.</span></a>
+            <div
+              class="footer-location"
+              aria-label="Local time in Kathmandu, Nepal"
+            >
+              <span class="location-dot"></span>
+              <span>Kathmandu, NP</span>
+              <span class="footer-time" id="footer-local-time">--:-- NPT</span>
+            </div>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <div class="footer-group">
+              <span class="footer-heading">Navigation</span>
+              <ul class="footer-links">
+                <li><a href="/#projects">Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/blog">Writing</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/resume">Resume</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-group">
+              <span class="footer-heading">Connect &amp; Meta</span>
+              <ul class="footer-links">
+                <li>
+                  <a
+                    href="https://github.com/Adrinstha"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/adrin-shrestha/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="/accessibility">Accessibility</a></li>
+                <li><a href="/sitemap.xml" target="_blank">Sitemap</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2026 Adrin Shrestha. Built with semantic HTML, CSS &amp;
+            JavaScript.
+          </p>
+          <a
+            href="#top"
+            class="back-to-top"
+            id="back-to-top"
+            aria-label="Back to top of page"
+          >
+            <span>Back to top</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      data-cfasync="false"
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+    ></script>
+    <script
+      data-cfasync="false"
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+    ></script>
+    <script src="script.js?v=1.6"></script>
+  </body>
+</html>

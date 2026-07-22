@@ -1,4 +1,4 @@
-(function () {
+﻿(function () {
   "use strict";
 
   const PRELOADER_FAILSAFE_MS = 4000;
@@ -41,8 +41,6 @@
     }, PRELOADER_FAILSAFE_MS);
   }
 
-  
-  
   startPreloaderFailsafe();
 
   const hasGsap = typeof window.gsap !== "undefined";
@@ -92,290 +90,718 @@
       });
     }
 
-    if (!hasGsap) {
-      hidePreloader(false);
-      return;
-    }
-
-    try {
-      const mainTimeline = window.gsap.timeline();
-
-      mainTimeline
-        .to(".preloader-progress", {
-          scaleX: 1,
-          duration: 1.2,
-          ease: "power2.inOut",
-        })
-        .to(".preloader-content", {
-          opacity: 0,
-          y: -20,
-          duration: 0.4,
-          ease: "power2.in",
-        })
-        .to("#preloader", {
-          yPercent: -100,
-          duration: 0.8,
-          ease: "power4.inOut",
-        })
-        .set("#preloader", { display: "none" })
-        .call(clearPreloaderFailsafe)
-        .from(
-          ".site-header",
-          {
-            y: -50,
-            opacity: 0,
-            duration: 0.8,
-            ease: "power3.out",
-            clearProps: "transform,opacity",
-          },
-          "-=0.4",
-        );
-
-      if (document.querySelector(".hero")) {
-        mainTimeline
-          .from(
-            ".hero .eyebrow",
+    if (hasGsap) {
+      try {
+        if (document.querySelector(".hero")) {
+          window.gsap.set(
+            ".hero .eyebrow, .hero h1, .hero-text, .hero-actions .btn, .profile-card",
             {
-              y: 30,
+              opacity: 0,
+              y: 35,
+            },
+          );
+        }
+
+        if (document.querySelector(".page-hero")) {
+          window.gsap.set(".page-hero .eyebrow, .page-hero h1, .page-hero p", {
+            opacity: 0,
+            y: 35,
+          });
+        }
+
+        const mainTimeline = window.gsap.timeline();
+
+        mainTimeline
+          .to(".preloader-progress", {
+            scaleX: 1,
+            duration: 1.2,
+            ease: "power2.inOut",
+          })
+          .to(".preloader-content", {
+            opacity: 0,
+            y: -20,
+            duration: 0.4,
+            ease: "power2.in",
+          })
+          .to("#preloader", {
+            yPercent: -100,
+            duration: 0.8,
+            ease: "power4.inOut",
+          })
+          .set("#preloader", { display: "none" })
+          .call(clearPreloaderFailsafe)
+          .from(
+            ".site-header",
+            {
+              y: -50,
               opacity: 0,
               duration: 0.8,
               ease: "power3.out",
+              clearProps: "transform,opacity",
             },
-            "-=0.6",
-          )
-          .from(
-            ".hero h1",
-            {
+            "-=0.4",
+          );
+
+        if (document.querySelector(".hero")) {
+          mainTimeline
+            .to(
+              ".hero .eyebrow",
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+              "-=0.5",
+            )
+            .to(
+              ".hero h1",
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+              "-=0.65",
+            )
+            .to(
+              ".hero-text",
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+              "-=0.65",
+            )
+            .to(
+              ".hero-actions .btn",
+              {
+                y: 0,
+                opacity: 1,
+                stagger: 0.15,
+                duration: 0.7,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+              "-=0.65",
+            )
+            .to(
+              ".profile-card",
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+              "-=0.7",
+            );
+        }
+
+        if (document.querySelector(".page-hero")) {
+          mainTimeline
+            .to(
+              ".page-hero .eyebrow",
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+              "-=0.5",
+            )
+            .to(
+              ".page-hero h1",
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+              "-=0.65",
+            )
+            .to(
+              ".page-hero p",
+              {
+                y: 0,
+                opacity: 1,
+                duration: 0.8,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+              "-=0.65",
+            );
+        }
+
+        if (hasScrollTrigger) {
+          if (document.querySelector(".stats")) {
+            window.gsap.from(".stats-grid div", {
+              scrollTrigger: {
+                trigger: ".stats",
+                start: "top 85%",
+              },
+              y: 30,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.8,
+              ease: "power2.out",
+              clearProps: "transform,opacity",
+            });
+          }
+
+          if (
+            document.querySelector("#projects") ||
+            document.querySelector(".project-grid")
+          ) {
+            window.gsap.from(
+              ".project-grid > .project-card:not([style*='display: none'])",
+              {
+                scrollTrigger: {
+                  trigger: ".project-grid",
+                  start: "top 80%",
+                },
+                y: 35,
+                opacity: 0,
+                stagger: 0.12,
+                duration: 0.7,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+            );
+          }
+
+          if (document.querySelector(".contact-layout-grid")) {
+            window.gsap.from(".contact-layout-grid > div", {
+              scrollTrigger: {
+                trigger: ".contact-layout-grid",
+                start: "top 85%",
+              },
+              y: 40,
+              opacity: 0,
+              stagger: 0.15,
+              duration: 0.8,
+              ease: "power3.out",
+              clearProps: "transform,opacity",
+            });
+
+            window.gsap.from(".contact-info-item", {
+              scrollTrigger: {
+                trigger: ".contact-info-list",
+                start: "top 85%",
+              },
+              y: 25,
+              opacity: 0,
+              stagger: 0.1,
+              duration: 0.6,
+              ease: "power2.out",
+              clearProps: "transform,opacity",
+            });
+          }
+
+          if (
+            document.querySelector(".contact-card") &&
+            !document.querySelector(".contact-layout-grid")
+          ) {
+            window.gsap.from(".contact-card", {
+              scrollTrigger: {
+                trigger: ".contact",
+                start: "top 85%",
+              },
               y: 40,
               opacity: 0,
               duration: 0.8,
               ease: "power3.out",
-            },
-            "-=0.7",
-          )
-          .from(
-            ".hero-text",
-            {
-              y: 30,
-              opacity: 0,
-              duration: 0.8,
-              ease: "power3.out",
-            },
-            "-=0.7",
-          )
-          .from(
-            ".hero-actions .btn",
-            {
-              y: 25,
+              clearProps: "transform,opacity",
+            });
+          }
+
+          if (
+            document.querySelector("#principles") ||
+            document.querySelector(".principles-grid")
+          ) {
+            window.gsap.from(".principles-grid > div", {
+              scrollTrigger: {
+                trigger: ".principles-grid",
+                start: "top 80%",
+              },
+              y: 40,
               opacity: 0,
               stagger: 0.15,
-              duration: 0.7,
-              ease: "power3.out",
-            },
-            "-=0.7",
-          )
-          .from(
-            ".profile-card",
-            {
-              scale: 0.95,
-              opacity: 0,
               duration: 0.8,
               ease: "power3.out",
-            },
-            "-=0.8",
-          );
-      }
+              clearProps: "transform,opacity",
+            });
+          }
 
-      if (document.querySelector(".page-hero")) {
-        mainTimeline
-          .from(
-            ".page-hero .eyebrow",
-            {
-              y: 25,
-              opacity: 0,
-              duration: 0.7,
-              ease: "power3.out",
-            },
-            "-=0.6",
-          )
-          .from(
-            ".page-hero h1",
-            {
-              y: 30,
-              opacity: 0,
-              duration: 0.7,
-              ease: "power3.out",
-            },
-            "-=0.65",
-          )
-          .from(
-            ".page-hero p",
-            {
+          if (
+            document.querySelector("#writing") ||
+            document.querySelector(".writing-grid") ||
+            document.querySelector(".blog-list")
+          ) {
+            window.gsap.from(
+              ".writing-grid > article, .blog-list > article, .blog-list > div",
+              {
+                scrollTrigger: {
+                  trigger: ".writing-grid, .blog-list",
+                  start: "top 80%",
+                },
+                y: 40,
+                opacity: 0,
+                stagger: 0.15,
+                duration: 0.8,
+                ease: "power3.out",
+                clearProps: "transform,opacity",
+              },
+            );
+          }
+
+          if (
+            document.querySelector("#experience") ||
+            document.querySelector(".timeline")
+          ) {
+            window.gsap.from(".timeline li", {
+              scrollTrigger: {
+                trigger: ".timeline",
+                start: "top 80%",
+              },
+              x: -30,
               y: 20,
               opacity: 0,
-              duration: 0.7,
+              stagger: 0.15,
+              duration: 0.8,
               ease: "power3.out",
-            },
-            "-=0.7",
-          );
-      }
+              clearProps: "transform,opacity",
+            });
+          }
 
-      if (hasScrollTrigger) {
-        if (document.querySelector(".stats")) {
-          window.gsap.from(".stats-grid div", {
-            scrollTrigger: {
-              trigger: ".stats",
-              start: "top 85%",
-            },
-            y: 30,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.8,
-            ease: "power2.out",
+          if (
+            document.querySelector(".article-container") ||
+            document.querySelector(".related-reading-box")
+          ) {
+            window.gsap.from(".article-container, .related-reading-box", {
+              scrollTrigger: {
+                trigger: "main",
+                start: "top 75%",
+              },
+              y: 35,
+              opacity: 0,
+              stagger: 0.2,
+              duration: 0.8,
+              ease: "power3.out",
+              clearProps: "transform,opacity",
+            });
+          }
+        }
+
+        document.querySelectorAll("a").forEach((link) => {
+          const href = link.getAttribute("href");
+          const target = link.getAttribute("target");
+
+          const isInternalPage =
+            href &&
+            !href.startsWith("#") &&
+            !href.startsWith("mailto:") &&
+            !href.startsWith("tel:") &&
+            !href.startsWith("javascript:") &&
+            !href.endsWith(".pdf") &&
+            !href.endsWith(".png") &&
+            !href.endsWith(".jpg") &&
+            target !== "_blank" &&
+            ((!href.startsWith("http://") && !href.startsWith("https://")) ||
+              href.startsWith(window.location.origin));
+
+          if (isInternalPage) {
+            link.addEventListener("click", (event) => {
+              const preloader = document.getElementById("preloader");
+
+              if (!preloader) {
+                return;
+              }
+
+              event.preventDefault();
+              preloader.classList.remove("is-hidden");
+              preloader.style.visibility = "visible";
+              preloader.style.pointerEvents = "auto";
+
+              window.gsap.set(preloader, {
+                display: "flex",
+                opacity: 1,
+                yPercent: 100,
+              });
+              window.gsap.set(".preloader-content", { opacity: 1, y: 0 });
+              window.gsap.set(".preloader-progress", { scaleX: 1 });
+
+              window.gsap.to(preloader, {
+                yPercent: 0,
+                duration: 0.6,
+                ease: "power3.inOut",
+                onComplete: () => {
+                  window.location.href = href;
+                },
+              });
+            });
+          }
+        });
+
+        const tabButtons = document.querySelectorAll(".project-tabs .tab-btn");
+        const projectCards = document.querySelectorAll(
+          ".project-grid .project-card",
+        );
+
+        if (tabButtons.length > 0 && projectCards.length > 0) {
+          tabButtons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+              const filter = btn.getAttribute("data-filter");
+
+              tabButtons.forEach((b) => b.classList.remove("active"));
+              btn.classList.add("active");
+
+              projectCards.forEach((card) => {
+                const category = card.getAttribute("data-category");
+                if (filter === "all" || category === filter) {
+                  card.style.display = "block";
+                  if (window.gsap) {
+                    window.gsap.fromTo(
+                      card,
+                      { opacity: 0, y: 15 },
+                      {
+                        opacity: 1,
+                        y: 0,
+                        duration: 0.3,
+                        ease: "power2.out",
+                        clearProps: "transform,opacity",
+                      },
+                    );
+                  }
+                } else {
+                  card.style.display = "none";
+                }
+              });
+            });
           });
         }
 
-        if (document.querySelector("#projects")) {
-          window.gsap.from(".project-grid > .project-card:not([style*='display: none'])", {
-            scrollTrigger: {
-              trigger: "#projects",
-              start: "top 80%",
-            },
-            y: 30,
-            opacity: 0,
-            stagger: 0.1,
-            duration: 0.6,
-            ease: "power2.out",
-            clearProps: "transform,opacity",
+        const tabRecruiter = document.getElementById("tab-recruiter");
+        const tabProject = document.getElementById("tab-project");
+        const panelRecruiter = document.getElementById("panel-recruiter");
+        const panelProject = document.getElementById("panel-project");
+
+        if (tabRecruiter && tabProject && panelRecruiter && panelProject) {
+          function switchContactTab(
+            activeTab,
+            activePanel,
+            inactiveTab,
+            inactivePanel,
+          ) {
+            activeTab.setAttribute("aria-selected", "true");
+            inactiveTab.setAttribute("aria-selected", "false");
+            activePanel.hidden = false;
+            inactivePanel.hidden = true;
+          }
+
+          tabRecruiter.addEventListener("click", () => {
+            switchContactTab(
+              tabRecruiter,
+              panelRecruiter,
+              tabProject,
+              panelProject,
+            );
+          });
+
+          tabProject.addEventListener("click", () => {
+            switchContactTab(
+              tabProject,
+              panelProject,
+              tabRecruiter,
+              panelRecruiter,
+            );
           });
         }
 
-        if (document.querySelector("#principles")) {
-          window.gsap.from(".principles-grid > div", {
-            scrollTrigger: {
-              trigger: "#principles",
-              start: "top 80%",
-            },
-            y: 40,
-            opacity: 0,
-            stagger: 0.15,
-            duration: 0.8,
-            ease: "power3.out",
-          });
-        }
-
-        if (document.querySelector("#writing")) {
-          window.gsap.from(".writing-grid > article", {
-            scrollTrigger: {
-              trigger: "#writing",
-              start: "top 80%",
-            },
-            y: 40,
-            opacity: 0,
-            stagger: 0.15,
-            duration: 0.8,
-            ease: "power3.out",
-          });
-        }
-
-        if (document.querySelector("#experience")) {
-          window.gsap.from(".timeline li", {
-            scrollTrigger: {
-              trigger: "#experience",
-              start: "top 80%",
-            },
-            x: -40,
-            opacity: 0,
-            stagger: 0.2,
-            duration: 0.8,
-            ease: "power2.out",
-          });
-        }
-      }
-
-      document.querySelectorAll("a").forEach((link) => {
-        const href = link.getAttribute("href");
-        const target = link.getAttribute("target");
-
-        if (
-          href &&
-          !href.startsWith("#") &&
-          !href.startsWith("mailto:") &&
-          !href.startsWith("tel:") &&
-          target !== "_blank" &&
-          (href.endsWith(".html") ||
-            href.includes(".html#") ||
-            href === "index.html")
+        function setupContactForm(
+          formId,
+          hpId,
+          mathId,
+          errMathId,
+          alertId,
+          formType,
         ) {
-          link.addEventListener("click", (event) => {
-            const preloader = document.getElementById("preloader");
+          const form = document.getElementById(formId);
+          if (!form) return;
 
-            if (!preloader) {
+          form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const hpInput = document.getElementById(hpId);
+            const mathInput = document.getElementById(mathId);
+            const errMath = document.getElementById(errMathId);
+            const alertBox = document.getElementById(alertId);
+
+            if (hpInput && hpInput.value.trim() !== "") {
+              console.warn("Spam bot submission blocked.");
+              if (alertBox) {
+                alertBox.className = "form-status-alert error";
+                alertBox.textContent =
+                  "Submission rejected by anti-spam verification.";
+                alertBox.style.display = "flex";
+              }
               return;
             }
 
-            event.preventDefault();
-            preloader.classList.remove("is-hidden");
-            preloader.style.visibility = "visible";
-            preloader.style.pointerEvents = "auto";
-
-            window.gsap.set(preloader, {
-              display: "flex",
-              opacity: 1,
-              yPercent: 100,
+            let isValid = true;
+            form
+              .querySelectorAll(".is-invalid")
+              .forEach((el) => el.classList.remove("is-invalid"));
+            form.querySelectorAll(".field-error-msg").forEach((el) => {
+              el.style.display = "none";
+              el.textContent = "";
             });
-            window.gsap.set(".preloader-content", { opacity: 1, y: 0 });
-            window.gsap.set(".preloader-progress", { scaleX: 1 });
+            if (alertBox) alertBox.style.display = "none";
 
-            window.gsap.to(preloader, {
-              yPercent: 0,
-              duration: 0.6,
-              ease: "power3.inOut",
-              onComplete: () => {
-                window.location.href = href;
-              },
-            });
+            const nameInput = form.querySelector('[name="name"]');
+            const emailInput = form.querySelector('[name="email"]');
+            const messageInput = form.querySelector('[name="message"]');
+            const typeSelect = form.querySelector("select[required]");
+
+            if (nameInput && !nameInput.value.trim()) {
+              isValid = false;
+              nameInput.classList.add("is-invalid");
+              const err = form.querySelector("#err-" + nameInput.id);
+              if (err) {
+                err.textContent = "Please enter your name.";
+                err.style.display = "block";
+              }
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (
+              emailInput &&
+              (!emailInput.value.trim() ||
+                !emailRegex.test(emailInput.value.trim()))
+            ) {
+              isValid = false;
+              emailInput.classList.add("is-invalid");
+              const err = form.querySelector("#err-" + emailInput.id);
+              if (err) {
+                err.textContent = "Please enter a valid email address.";
+                err.style.display = "block";
+              }
+            }
+
+            if (typeSelect && !typeSelect.value) {
+              isValid = false;
+              typeSelect.classList.add("is-invalid");
+              const err = form.querySelector("#err-" + typeSelect.id);
+              if (err) {
+                err.textContent = "Please select an option.";
+                err.style.display = "block";
+              }
+            }
+
+            if (messageInput && !messageInput.value.trim()) {
+              isValid = false;
+              messageInput.classList.add("is-invalid");
+              const err = form.querySelector("#err-" + messageInput.id);
+              if (err) {
+                err.textContent = "Please enter your message details.";
+                err.style.display = "block";
+              }
+            }
+
+            if (mathInput) {
+              const mathAns = parseInt(mathInput.value.trim(), 10);
+              if (isNaN(mathAns) || mathAns !== 7) {
+                isValid = false;
+                mathInput.classList.add("is-invalid");
+                if (errMath) {
+                  errMath.textContent =
+                    "Incorrect security answer. Please solve 4 + 3 = 7.";
+                  errMath.style.display = "block";
+                }
+              }
+            }
+
+            if (!isValid) return;
+
+            const nameVal = nameInput ? nameInput.value.trim() : "";
+            const emailVal = emailInput ? emailInput.value.trim() : "";
+            const messageVal = messageInput ? messageInput.value.trim() : "";
+            const typeVal = typeSelect ? typeSelect.value : "";
+
+            let subject = "";
+            let body = "";
+
+            if (formType === "recruiter") {
+              const companyInput = form.querySelector('[name="company"]');
+              const companyVal = companyInput ? companyInput.value.trim() : "";
+              subject = encodeURIComponent(
+                `[Engineering Opportunity] ${typeVal} - ${companyVal || nameVal}`,
+              );
+              body = encodeURIComponent(
+                `Hi Adrin,\n\nName: ${nameVal}\nWork Email: ${emailVal}\nCompany: ${companyVal || "N/A"}\nOpportunity Type: ${typeVal}\n\nMessage Details:\n${messageVal}\n\nSent from Portfolio Contact Page.`,
+              );
+            } else {
+              const timelineSelect = form.querySelector('[name="timeline"]');
+              const timelineVal = timelineSelect ? timelineSelect.value : "";
+              subject = encodeURIComponent(
+                `[Project Inquiry] ${typeVal} - ${nameVal}`,
+              );
+              body = encodeURIComponent(
+                `Hi Adrin,\n\nName: ${nameVal}\nEmail: ${emailVal}\nProject Scope: ${typeVal}\nTimeline/Budget: ${timelineVal || "N/A"}\n\nProject Overview:\n${messageVal}\n\nSent from Portfolio Contact Page.`,
+              );
+            }
+
+            if (alertBox) {
+              alertBox.className = "form-status-alert success";
+              alertBox.innerHTML = `<span>Thank you, <strong>${nameVal}</strong>! Your inquiry details are ready. Opening your mail app to send directly...</span>`;
+              alertBox.style.display = "flex";
+            }
+
+            window.setTimeout(() => {
+              window.location.href = `mailto:adrinshrestha16@gmail.com?subject=${subject}&body=${body}`;
+              form.reset();
+            }, 800);
           });
         }
-      });
-      // Project classification tab filtering
-      const tabButtons = document.querySelectorAll(".project-tabs .tab-btn");
-      const projectCards = document.querySelectorAll(".project-grid .project-card");
 
-      if (tabButtons.length > 0 && projectCards.length > 0) {
-        tabButtons.forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const filter = btn.getAttribute("data-filter");
-
-            tabButtons.forEach((b) => b.classList.remove("active"));
-            btn.classList.add("active");
-
-            projectCards.forEach((card) => {
-              const category = card.getAttribute("data-category");
-              if (filter === "all" || category === filter) {
-                card.style.display = "block";
-                if (window.gsap) {
-                  window.gsap.fromTo(
-                    card,
-                    { opacity: 0, y: 15 },
-                    { opacity: 1, y: 0, duration: 0.3, ease: "power2.out", clearProps: "transform,opacity" }
-                  );
-                }
-              } else {
-                card.style.display = "none";
-              }
-            });
-          });
-        });
+        setupContactForm(
+          "recruiter-form",
+          "rec-hp-website",
+          "rec-math-check",
+          "err-rec-math",
+          "rec-status-alert",
+          "recruiter",
+        );
+        setupContactForm(
+          "project-form",
+          "proj-hp-website",
+          "proj-math-check",
+          "err-proj-math",
+          "project-status-alert",
+          "project",
+        );
+      } catch (error) {
+        console.error("Animation initialization failed:", error);
+        hidePreloader(false);
       }
-    } catch (error) {
-      console.error("Animation initialization failed:", error);
+    } else {
       hidePreloader(false);
+    }
+
+    function trackAnalyticsEvent(eventName, eventParams) {
+      if (typeof window.gtag === "function") {
+        window.gtag("event", eventName, eventParams);
+      }
+      if (typeof window.plausible === "function") {
+        window.plausible(eventName, { props: eventParams });
+      }
+      window.dispatchEvent(
+        new CustomEvent("adrin:analytics", {
+          detail: { eventName, params: eventParams },
+        }),
+      );
+      try {
+        const storageKey = `metric_${eventName}`;
+        const count =
+          parseInt(sessionStorage.getItem(storageKey) || "0", 10) + 1;
+        sessionStorage.setItem(storageKey, count.toString());
+        console.log(
+          `[Analytics Tracked] ${eventName}:`,
+          eventParams,
+          `(Session total: ${count})`,
+        );
+      } catch (e) {
+        console.log(`[Analytics Tracked] ${eventName}:`, eventParams);
+      }
+    }
+
+    function trackResumeView() {
+      trackAnalyticsEvent("resume_view", {
+        page_location: window.location.href,
+        page_title: document.title,
+        format: "HTML",
+      });
+    }
+
+    function trackResumeDownload(sourceElement) {
+      const linkUrl = sourceElement
+        ? sourceElement.getAttribute("href")
+        : "resume.pdf";
+      const clickId = sourceElement
+        ? sourceElement.id ||
+          sourceElement.getAttribute("data-track") ||
+          "pdf-link"
+        : "resume-download";
+      trackAnalyticsEvent("resume_download", {
+        file_name: "Adrin_Shrestha_Resume.pdf",
+        file_extension: "pdf",
+        link_url: linkUrl,
+        source_id: clickId,
+        format: "PDF",
+      });
+    }
+
+    const isResumePage =
+      document.body.getAttribute("data-page") === "resume" ||
+      window.location.pathname.endsWith("/resume") ||
+      window.location.pathname.endsWith("/resume.html");
+
+    if (isResumePage) {
+      trackResumeView();
+    }
+
+    document.body.addEventListener("click", (event) => {
+      const downloadTarget = event.target.closest(
+        'a[href*="resume.pdf"], [data-track="resume-download"]',
+      );
+      if (downloadTarget) {
+        trackResumeDownload(downloadTarget);
+      }
+    });
+
+    function initFooterTime() {
+      const timeEl = document.getElementById("footer-local-time");
+      if (!timeEl) return;
+
+      function updateTime() {
+        try {
+          const now = new Date();
+          const formatter = new Intl.DateTimeFormat("en-US", {
+            timeZone: "Asia/Kathmandu",
+            hour: "2-digit",
+            minute: "2-digit",
+            hour12: true,
+          });
+          timeEl.textContent = `${formatter.format(now)} NPT`;
+        } catch (e) {
+          timeEl.textContent = "NPT (UTC+5:45)";
+        }
+      }
+
+      updateTime();
+      setInterval(updateTime, 30000);
+    }
+
+    initFooterTime();
+
+    const backToTopBtn = document.getElementById("back-to-top");
+    if (backToTopBtn) {
+      backToTopBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
     }
   });
 
-  
-  
   window.addEventListener("pageshow", (event) => {
     if (event.persisted) {
       hidePreloader(true);

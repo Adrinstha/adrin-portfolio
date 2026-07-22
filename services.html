@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -8,7 +8,7 @@
       name="description"
       content="Website development, WordPress support, landing pages and SEO services by Adrin Shrestha in Nepal."
     />
-    <link rel="canonical" href="https://adrinshrestha.com.np/services.html" />
+    <link rel="canonical" href="https://adrinshrestha.com.np/services" />
     <link rel="stylesheet" href="style.css?v=1.5" />
     <link rel="icon" type="image/png" href="icon.png" />
     <meta
@@ -20,10 +20,7 @@
       content="Website development, WordPress support, landing pages and SEO services by Adrin Shrestha in Nepal."
     />
     <meta property="og:type" content="website" />
-    <meta
-      property="og:url"
-      content="https://adrinshrestha.com.np/services.html"
-    />
+    <meta property="og:url" content="https://adrinshrestha.com.np/services" />
     <meta property="og:image" content="https://adrinshrestha.com.np/icon.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -38,7 +35,7 @@
       document.documentElement.classList.add("js-enabled");
     </script>
   </head>
-  <body>
+  <body id="top">
     <div class="preloader" id="preloader">
       <div class="preloader-content">
         <div class="preloader-logo">Adrin<span>.</span></div>
@@ -66,7 +63,7 @@
     <div class="cursor-glow"></div>
     <header class="site-header">
       <nav class="nav container" aria-label="Main navigation">
-        <a href="index.html" class="logo">Adrin<span>.</span></a>
+        <a href="/" class="logo">Adrin<span>.</span></a>
         <button
           class="menu-toggle"
           aria-label="Toggle navigation"
@@ -77,11 +74,12 @@
           <span></span>
         </button>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="contact.html">Contact</a></li>
-          <li><a href="resume.pdf" target="_blank">Resume</a></li>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services" class="active">Services</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/resume">Resume</a></li>
         </ul>
       </nav>
     </header>
@@ -126,9 +124,7 @@
               <p>
                 Keyword research, meta title, meta description, headings,
                 internal links and blog content structure (read my
-                <a
-                  href="blog/seo-for-web-developers.html"
-                  class="brand-link"
+                <a href="/blog/seo-for-web-developers" class="brand-link"
                   >SEO guide for web developers</a
                 >).
               </p>
@@ -139,13 +135,121 @@
     </main>
 
     <footer class="footer">
-      <div class="footer-inner container">
-        <p>© 2026 Adrin Shrestha. Built with HTML, CSS and JavaScript.</p>
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="/" class="footer-logo">Adrin<span>.</span></a>
+            <div
+              class="footer-location"
+              aria-label="Local time in Kathmandu, Nepal"
+            >
+              <span class="location-dot"></span>
+              <span>Kathmandu, NP</span>
+              <span class="footer-time" id="footer-local-time">--:-- NPT</span>
+            </div>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <div class="footer-group">
+              <span class="footer-heading">Navigation</span>
+              <ul class="footer-links">
+                <li><a href="/#projects">Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/blog">Writing</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/resume">Resume</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-group">
+              <span class="footer-heading">Connect &amp; Meta</span>
+              <ul class="footer-links">
+                <li>
+                  <a
+                    href="https://github.com/Adrinstha"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/adrin-shrestha/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="/accessibility">Accessibility</a></li>
+                <li><a href="/sitemap.xml" target="_blank">Sitemap</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2026 Adrin Shrestha. Built with semantic HTML, CSS &amp;
+            JavaScript.
+          </p>
+          <a
+            href="#top"
+            class="back-to-top"
+            id="back-to-top"
+            aria-label="Back to top of page"
+          >
+            <span>Back to top</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </a>
+        </div>
       </div>
     </footer>
 
-    <script data-cfasync="false" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" onerror="var p=document.getElementById('preloader');if(p){p.style.display='none';p.style.pointerEvents='none';}"></script>
-    <script data-cfasync="false" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" onerror="var p=document.getElementById('preloader');if(p){p.style.display='none';p.style.pointerEvents='none';}"></script>
-    <script data-cfasync="false" src="script.js?v=2.2" onerror="var p=document.getElementById('preloader');if(p){p.style.display='none';p.style.pointerEvents='none';}"></script>
+    <script
+      data-cfasync="false"
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+      onerror="
+        var p = document.getElementById('preloader');
+        if (p) {
+          p.style.display = 'none';
+          p.style.pointerEvents = 'none';
+        }
+      "
+    ></script>
+    <script
+      data-cfasync="false"
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+      onerror="
+        var p = document.getElementById('preloader');
+        if (p) {
+          p.style.display = 'none';
+          p.style.pointerEvents = 'none';
+        }
+      "
+    ></script>
+    <script
+      data-cfasync="false"
+      src="script.js?v=2.2"
+      onerror="
+        var p = document.getElementById('preloader');
+        if (p) {
+          p.style.display = 'none';
+          p.style.pointerEvents = 'none';
+        }
+      "
+    ></script>
   </body>
 </html>
