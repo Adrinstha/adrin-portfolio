@@ -484,7 +484,17 @@
 
               projectCards.forEach((card) => {
                 const category = card.getAttribute("data-category");
-                if (filter === "all" || category === filter) {
+                const isMatch =
+                  filter === "all" ||
+                  category === filter ||
+                  (filter === "completed" &&
+                    (category === "shipped" || category === "completed")) ||
+                  (filter === "in-progress" &&
+                    (category === "dev" || category === "in-progress")) ||
+                  (filter === "concept" &&
+                    (category === "experiment" || category === "concept"));
+
+                if (isMatch) {
                   card.style.display = "block";
                   if (window.gsap) {
                     window.gsap.fromTo(

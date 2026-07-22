@@ -11,10 +11,6 @@
       name="description"
       content="Portfolio of Adrin Shrestha, a Full Stack Web Developer with Technical SEO Experience in Nepal. React, WordPress, HTML, CSS, JavaScript, and search optimization."
     />
-    <meta
-      name="keywords"
-      content="Adrin Shrestha, Full Stack Web Developer Nepal, Technical SEO Nepal, React Developer Nepal, WordPress Developer Nepal, Web Developer Nepal"
-    />
     <meta name="author" content="Adrin Shrestha" />
     <meta
       property="og:title"
@@ -217,33 +213,32 @@
             <p class="eyebrow">Portfolio</p>
             <h2>Selected Work</h2>
             <p>
-              Completed production projects, active builds, and technical
-              experiments.
+              Projects categorized with verified status: production builds, active developments, and conceptual prototypes.
             </p>
             <div class="project-tabs justify-center">
-              <button class="tab-btn active" data-filter="shipped">
-                Shipped Work (2)
+              <button class="tab-btn active" data-filter="completed">
+                Completed (2)
               </button>
               <button class="tab-btn" data-filter="all">
                 All Projects (5)
               </button>
-              <button class="tab-btn" data-filter="dev">
-                In Development (1)
+              <button class="tab-btn" data-filter="in-progress">
+                In Progress (1)
               </button>
-              <button class="tab-btn" data-filter="experiment">
-                Experiments (2)
+              <button class="tab-btn" data-filter="concept">
+                Concept Projects (2)
               </button>
             </div>
           </div>
 
           <div class="project-grid">
-            <article class="project-card featured" data-category="shipped">
-              <span class="status-badge status-shipped">Shipped</span>
+            <article class="project-card featured" data-category="completed">
+              <span class="status-badge status-completed">Completed</span>
               <div class="project-tag">HTML5 / CSS Grid / SEO</div>
               <h3>Nepal Construction Business Platform</h3>
               <p>
                 A business website built with semantic HTML5, CSS Grid, and
-                localized Schema.org microdata for search ranking and zero
+                localized Schema.org microdata for high search ranking and zero
                 layout shifts.
               </p>
               <div class="project-metrics">
@@ -260,17 +255,33 @@
                   <span>WCAG Compliant</span>
                 </div>
               </div>
+              <div class="project-footer-actions">
+                <a
+                  href="https://github.com/Adrinstha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-project-link primary-link"
+                  >Live Demo &rarr;</a
+                >
+                <a
+                  href="https://github.com/Adrinstha"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-project-link secondary-link"
+                  >View Repository</a
+                >
+              </div>
             </article>
 
-            <article class="project-card featured" data-category="shipped">
-              <span class="status-badge status-shipped">Shipped</span>
+            <article class="project-card featured" data-category="completed">
+              <span class="status-badge status-completed">Completed</span>
               <div class="project-tag">
                 Vanilla JS / Technical SEO / CSS Tokens
               </div>
               <h3>Developer Portfolio & Writing Site</h3>
               <p>
                 A developer portfolio built with CSS design tokens, sub-second
-                FCP, and integrated JSON-LD Person and Article schemas.
+                FCP performance, and integrated JSON-LD Person and Article schemas.
               </p>
               <div class="project-metrics">
                 <div class="project-metric">
@@ -286,14 +297,26 @@
                   <span>CLS Score</span>
                 </div>
               </div>
+              <div class="project-footer-actions">
+                <a href="https://adrinshrestha.com.np" class="btn-project-link primary-link"
+                  >Live Site &rarr;</a
+                >
+                <a
+                  href="https://github.com/Adrinstha/adrin-portfolio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn-project-link secondary-link"
+                  >View Repository</a
+                >
+              </div>
             </article>
 
             <article
               class="project-card"
-              data-category="dev"
+              data-category="in-progress"
               style="display: none"
             >
-              <span class="status-badge status-dev">In Development</span>
+              <span class="status-badge status-in-progress">In Progress</span>
               <div class="project-tag">React / Node.js / REST API</div>
               <h3>Construction Project Admin Dashboard</h3>
               <p>
@@ -314,14 +337,18 @@
                   <span>API Integration</span>
                 </div>
               </div>
+              <div class="status-disclosure">
+                <strong>Status &amp; Remaining Work:</strong>
+                Front-end state architecture complete. Remaining work includes REST API integration, user authentication, and backend database persistence.
+              </div>
             </article>
 
             <article
               class="project-card"
-              data-category="experiment"
+              data-category="concept"
               style="display: none"
             >
-              <span class="status-badge status-experiment">Experiment</span>
+              <span class="status-badge status-concept">Concept Project</span>
               <div class="project-tag">JS ES6+ / Web Vitals API</div>
               <h3>Core Web Vitals Performance Auditor</h3>
               <p>
@@ -342,14 +369,18 @@
                   <span>Report Export</span>
                 </div>
               </div>
+              <div class="status-disclosure">
+                <strong>Classification:</strong>
+                Prototype utility script created for empirical Core Web Vitals benchmarking.
+              </div>
             </article>
 
             <article
               class="project-card"
-              data-category="experiment"
+              data-category="concept"
               style="display: none"
             >
-              <span class="status-badge status-experiment">Experiment</span>
+              <span class="status-badge status-concept">Concept Project</span>
               <div class="project-tag">React / Microdata / JSON-LD</div>
               <h3>Local Business Schema Generator</h3>
               <p>
@@ -369,6 +400,10 @@
                   <strong>Schema.org</strong>
                   <span>Compliant</span>
                 </div>
+              </div>
+              <div class="status-disclosure">
+                <strong>Classification:</strong>
+                Conceptual React application built to prototype client-side JSON-LD markup creation.
               </div>
             </article>
           </div>
