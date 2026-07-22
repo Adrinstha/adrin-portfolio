@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   "use strict";
 
   const PRELOADER_FAILSAFE_MS = 4000;
@@ -240,10 +240,11 @@
         }
 
         if (hasScrollTrigger) {
-          if (document.querySelector(".stats")) {
+          const statsEl = document.querySelector(".stats");
+          if (statsEl && document.querySelector(".stats-grid div")) {
             window.gsap.from(".stats-grid div", {
               scrollTrigger: {
-                trigger: ".stats",
+                trigger: statsEl,
                 start: "top 85%",
               },
               y: 30,
@@ -255,15 +256,18 @@
             });
           }
 
+          const projectGridEl = document.querySelector(".project-grid");
           if (
-            document.querySelector("#projects") ||
-            document.querySelector(".project-grid")
+            projectGridEl &&
+            document.querySelector(
+              ".project-grid > .project-card:not([style*='display: none'])",
+            )
           ) {
             window.gsap.from(
               ".project-grid > .project-card:not([style*='display: none'])",
               {
                 scrollTrigger: {
-                  trigger: ".project-grid",
+                  trigger: projectGridEl,
                   start: "top 80%",
                 },
                 y: 35,
@@ -276,10 +280,11 @@
             );
           }
 
-          if (document.querySelector(".contact-layout-grid")) {
+          const contactGridEl = document.querySelector(".contact-layout-grid");
+          if (contactGridEl && document.querySelector(".contact-layout-grid > div")) {
             window.gsap.from(".contact-layout-grid > div", {
               scrollTrigger: {
-                trigger: ".contact-layout-grid",
+                trigger: contactGridEl,
                 start: "top 85%",
               },
               y: 40,
@@ -290,27 +295,27 @@
               clearProps: "transform,opacity",
             });
 
-            window.gsap.from(".contact-info-item", {
-              scrollTrigger: {
-                trigger: ".contact-info-list",
-                start: "top 85%",
-              },
-              y: 25,
-              opacity: 0,
-              stagger: 0.1,
-              duration: 0.6,
-              ease: "power2.out",
-              clearProps: "transform,opacity",
-            });
+            if (document.querySelector(".contact-info-item")) {
+              window.gsap.from(".contact-info-item", {
+                scrollTrigger: {
+                  trigger: document.querySelector(".contact-info-list") || contactGridEl,
+                  start: "top 85%",
+                },
+                y: 25,
+                opacity: 0,
+                stagger: 0.1,
+                duration: 0.6,
+                ease: "power2.out",
+                clearProps: "transform,opacity",
+              });
+            }
           }
 
-          if (
-            document.querySelector(".contact-card") &&
-            !document.querySelector(".contact-layout-grid")
-          ) {
+          const contactCardEl = document.querySelector(".contact-card");
+          if (contactCardEl && !document.querySelector(".contact-layout-grid")) {
             window.gsap.from(".contact-card", {
               scrollTrigger: {
-                trigger: ".contact",
+                trigger: document.querySelector(".contact") || contactCardEl,
                 start: "top 85%",
               },
               y: 40,
@@ -321,13 +326,11 @@
             });
           }
 
-          if (
-            document.querySelector("#principles") ||
-            document.querySelector(".principles-grid")
-          ) {
+          const principlesGridEl = document.querySelector(".principles-grid");
+          if (principlesGridEl && document.querySelector(".principles-grid > div")) {
             window.gsap.from(".principles-grid > div", {
               scrollTrigger: {
-                trigger: ".principles-grid",
+                trigger: principlesGridEl,
                 start: "top 80%",
               },
               y: 40,
@@ -339,16 +342,20 @@
             });
           }
 
-          if (
-            document.querySelector("#writing") ||
+          const writingTriggerEl =
             document.querySelector(".writing-grid") ||
-            document.querySelector(".blog-list")
+            document.querySelector(".blog-list");
+          if (
+            writingTriggerEl &&
+            document.querySelector(
+              ".writing-grid > article, .blog-list > article, .blog-list > div",
+            )
           ) {
             window.gsap.from(
               ".writing-grid > article, .blog-list > article, .blog-list > div",
               {
                 scrollTrigger: {
-                  trigger: ".writing-grid, .blog-list",
+                  trigger: writingTriggerEl,
                   start: "top 80%",
                 },
                 y: 40,
@@ -361,17 +368,14 @@
             );
           }
 
-          if (
-            document.querySelector("#experience") ||
-            document.querySelector(".timeline")
-          ) {
-            window.gsap.from(".timeline li", {
+          const expListEl = document.querySelector(".experience-list");
+          if (expListEl && document.querySelector(".experience-card")) {
+            window.gsap.from(".experience-card", {
               scrollTrigger: {
-                trigger: ".timeline",
+                trigger: expListEl,
                 start: "top 80%",
               },
-              x: -30,
-              y: 20,
+              y: 35,
               opacity: 0,
               stagger: 0.15,
               duration: 0.8,
@@ -380,13 +384,29 @@
             });
           }
 
-          if (
-            document.querySelector(".article-container") ||
-            document.querySelector(".related-reading-box")
-          ) {
+          const resumeTimelineEl = document.querySelector(".resume-timeline");
+          if (resumeTimelineEl && document.querySelector(".timeline-card")) {
+            window.gsap.from(".timeline-card", {
+              scrollTrigger: {
+                trigger: resumeTimelineEl,
+                start: "top 80%",
+              },
+              y: 35,
+              opacity: 0,
+              stagger: 0.15,
+              duration: 0.8,
+              ease: "power3.out",
+              clearProps: "transform,opacity",
+            });
+          }
+
+          const articleTarget = document.querySelector(
+            ".article-container, .related-reading-box",
+          );
+          if (articleTarget) {
             window.gsap.from(".article-container, .related-reading-box", {
               scrollTrigger: {
-                trigger: "main",
+                trigger: document.querySelector("main") || articleTarget,
                 start: "top 75%",
               },
               y: 35,

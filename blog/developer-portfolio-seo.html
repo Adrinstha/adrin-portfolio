@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Developer Portfolio SEO: HTML, CSS &amp; JavaScript Guide</title>
+    <meta
+      name="description"
+      content="See how Adrin Shrestha approached developer portfolio SEO using HTML, CSS and JavaScript, including metadata, semantic HTML, internal links, schema, performance and measurement."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link
+      rel="canonical"
+      href="https://adrinshrestha.com.np/blog/developer-portfolio-seo"
+    />
+
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Developer Portfolio SEO: How I Built an SEO-Friendly Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="A practical HTML, CSS and JavaScript case study covering metadata, semantic structure, internal links, schema, performance and honest measurement."
+    />
+    <meta
+      property="og:url"
+      content="https://adrinshrestha.com.np/blog/developer-portfolio-seo"
+    />
+    <meta property="og:image" content="https://adrinshrestha.com.np/icon.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Developer Portfolio SEO: HTML, CSS &amp; JavaScript Guide"
+    />
+    <meta
+      name="twitter:description"
+      content="A real-world developer portfolio SEO case study covering metadata, semantic HTML, internal linking, schema and performance."
+    />
+    <meta
+      name="twitter:image"
+      content="https://adrinshrestha.com.np/icon.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap"
+    />
+    <link rel="stylesheet" href="../style.css?v=1.5" />
+    <link rel="icon" type="image/png" href="../icon.png" />
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Developer Portfolio SEO: How I Built an SEO-Friendly Portfolio with HTML, CSS and JavaScript",
+        "description": "A practical developer portfolio SEO case study covering metadata, semantic HTML, internal links, structured data, performance and measurement.",
+        "image": "https://adrinshrestha.com.np/icon.png",
+        "author": {
+          "@type": "Person",
+          "name": "Adrin Shrestha",
+          "url": "https://adrinshrestha.com.np/about"
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Adrin Shrestha"
+        },
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": "https://adrinshrestha.com.np/blog/developer-portfolio-seo"
+        },
+        "datePublished": "2026-07-22",
+        "dateModified": "2026-07-22"
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://adrinshrestha.com.np/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://adrinshrestha.com.np/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Developer Portfolio SEO",
+            "item": "https://adrinshrestha.com.np/blog/developer-portfolio-seo"
+          }
+        ]
+      }
+    </script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is developer portfolio SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Developer portfolio SEO is the process of structuring and optimizing a developer’s personal website so that search engines, recruiters and users can understand the developer’s identity, skills, projects and professional goals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does a developer portfolio need SEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A portfolio can exist without an SEO strategy, but SEO makes it easier for search engines to discover and interpret its pages. The same improvements—clear headings, fast loading, useful links and detailed projects—also improve the experience for recruiters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is HTML, CSS and JavaScript enough for an SEO-friendly portfolio?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A portfolio does not need a large framework to be search-friendly. Plain HTML, CSS and JavaScript can provide crawlable content, semantic structure, fast performance and complete metadata when implemented carefully."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body id="top">
+    <div class="noise"></div>
+    <div class="cursor-glow"></div>
+    <header class="site-header">
+      <nav class="nav container" aria-label="Main navigation">
+        <a href="/" class="logo">Adrin<span>.</span></a>
+        <button
+          class="menu-toggle"
+          aria-label="Toggle navigation"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/services">Services</a></li>
+          <li><a href="/blog" class="active">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+          <li><a href="/resume">Resume</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="/">Home</a> &gt; <a href="/blog">Blog</a> &gt; Developer
+            Portfolio SEO
+          </nav>
+          <p class="eyebrow">Technical SEO &amp; Engineering</p>
+          <h1>
+            Developer Portfolio SEO: How I Built an SEO-Friendly Portfolio with
+            HTML, CSS &amp; JavaScript
+          </h1>
+          <p class="intro">
+            A developer portfolio should not only look good. It should clearly
+            explain who the developer is, what they build, which technologies
+            they use, and how recruiters or clients can verify their work.
+          </p>
+          <div class="meta">
+            <span>By Adrin Shrestha</span>
+            <span>•</span>
+            <time datetime="2026-07-22">July 22, 2026</time>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <article class="container article-content">
+          <section class="summary-box" aria-labelledby="quick-answer">
+            <h2 id="quick-answer">Quick Answer</h2>
+            <p>
+              <strong>Developer portfolio SEO</strong> is the process of making
+              a portfolio easy for search engines, recruiters, and users to
+              understand. It includes clear page ownership, descriptive
+              metadata, semantic HTML, crawlable links, detailed project
+              evidence, fast performance, accurate structured data, and honest
+              measurement.
+            </p>
+          </section>
+
+          <section class="toc" aria-labelledby="table-of-contents">
+            <h2 id="table-of-contents">Table of Contents</h2>
+            <ol>
+              <li>
+                <a href="#what-is-developer-portfolio-seo"
+                  >What Is Developer Portfolio SEO?</a
+                >
+              </li>
+              <li>
+                <a href="#why-portfolio-is-more-than-design"
+                  >Why I Treated My Portfolio as More Than a Design Project</a
+                >
+              </li>
+              <li>
+                <a href="#define-page-ownership"
+                  >1. Define What Every Page Should Rank For</a
+                >
+              </li>
+              <li>
+                <a href="#metadata"
+                  >2. Create Descriptive Titles and Metadata</a
+                >
+              </li>
+              <li>
+                <a href="#semantic-html"
+                  >3. Use Semantic HTML and Clear Headings</a
+                >
+              </li>
+              <li>
+                <a href="#crawlable-navigation"
+                  >4. Make Navigation and Internal Links Crawlable</a
+                >
+              </li>
+              <li>
+                <a href="#personal-entity"
+                  >5. Build a Consistent Personal Entity</a
+                >
+              </li>
+              <li>
+                <a href="#project-evidence"
+                  >6. Present Projects With Evidence</a
+                >
+              </li>
+              <li>
+                <a href="#image-optimization">7. Optimize Portfolio Images</a>
+              </li>
+              <li>
+                <a href="#performance"
+                  >8. Protect Performance and Core Web Vitals</a
+                >
+              </li>
+              <li>
+                <a href="#structured-data">9. Add Accurate Structured Data</a>
+              </li>
+              <li>
+                <a href="#canonical-indexing"
+                  >10. Include Canonical and Indexing Controls</a
+                >
+              </li>
+              <li>
+                <a href="#github-connections"
+                  >11. Connect Portfolio With GitHub &amp; Profiles</a
+                >
+              </li>
+              <li>
+                <a href="#measurement"
+                  >12. Measure Results Without Inventing Success</a
+                >
+              </li>
+              <li>
+                <a href="#checklist">Developer Portfolio SEO Checklist</a>
+              </li>
+              <li><a href="#faqs">Frequently Asked Questions</a></li>
+            </ol>
+          </section>
+
+          <section id="what-is-developer-portfolio-seo">
+            <h2>What Is Developer Portfolio SEO?</h2>
+            <p>
+              Developer portfolio SEO means structuring and optimizing a
+              personal developer website so that search engines can crawl its
+              pages, understand its content, and connect the website with the
+              correct person, skills, projects, and professional goals.
+            </p>
+            <p>
+              It is different from inserting keywords into a homepage. A useful
+              portfolio strategy must answer several questions:
+            </p>
+            <ul>
+              <li>Who does this website represent?</li>
+              <li>What kind of developer is this person?</li>
+              <li>Which technologies can they use?</li>
+              <li>Which projects have they actually built?</li>
+              <li>Where can the work be verified?</li>
+              <li>Which opportunities are they seeking?</li>
+              <li>How are the pages related?</li>
+              <li>
+                Can users navigate the website on mobile and with assistive
+                technology?
+              </li>
+            </ul>
+            <p>
+              My portfolio is intended to position me as a developing web
+              engineer from Nepal with interests in frontend development,
+              JavaScript, React, technical SEO, accessibility, and modern
+              website performance. That positioning is more useful than a vague
+              statement such as “I create digital experiences” because it helps
+              visitors understand what I am actually learning and building.
+            </p>
+          </section>
+
+          <section id="why-portfolio-is-more-than-design">
+            <h2>Why I Treated My Portfolio as More Than a Design Project</h2>
+            <p>
+              Many portfolios focus almost entirely on visual presentation.
+              Animation, typography, and creative layouts can make a website
+              memorable, but they do not automatically explain the developer’s
+              professional value.
+            </p>
+            <p>I wanted my portfolio to communicate three things:</p>
+            <ol>
+              <li>I am building practical frontend-development skills.</li>
+              <li>
+                I understand how website structure affects search visibility.
+              </li>
+              <li>
+                I can connect technical implementation with user and business
+                objectives.
+              </li>
+            </ol>
+            <p>
+              This means the site needs more than a hero section and a few
+              project cards. It needs an understandable content structure,
+              strong project documentation, clear internal links, and evidence
+              that supports the claims being made.
+            </p>
+          </section>
+
+          <section id="define-page-ownership">
+            <h2>1. Define What Every Page Should Rank For</h2>
+            <p>
+              The first step was not writing metadata. It was deciding what each
+              important page should represent.
+            </p>
+            <p>
+              When several pages target the same topic and intent, they can
+              compete with each other or create an unclear site structure. Each
+              important page should therefore have one dominant purpose.
+            </p>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Page</th>
+                    <th>Primary Purpose</th>
+                    <th>What It Should Not Replace</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Homepage</td>
+                    <td>
+                      Introduce Adrin, core skills, projects, and career
+                      direction
+                    </td>
+                    <td>Detailed technical tutorials</td>
+                  </tr>
+                  <tr>
+                    <td>About</td>
+                    <td>
+                      Explain background, interests, current level, and goals
+                    </td>
+                    <td>Project case studies</td>
+                  </tr>
+                  <tr>
+                    <td>Projects</td>
+                    <td>
+                      Show completed work with evidence and technical context
+                    </td>
+                    <td>Generic skill lists</td>
+                  </tr>
+                  <tr>
+                    <td>Blog</td>
+                    <td>Answer specific technical and career questions</td>
+                    <td>The main portfolio identity page</td>
+                  </tr>
+                  <tr>
+                    <td>Contact</td>
+                    <td>
+                      Support internship, employment, freelance, and
+                      collaboration inquiries
+                    </td>
+                    <td>Educational search intent</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3>Homepage</h3>
+            <p>
+              The homepage should represent the main personal entity and overall
+              professional positioning. It can communicate my name, current
+              development direction, important technologies, selected projects,
+              and links to deeper pages.
+            </p>
+
+            <h3>About Page</h3>
+            <p>
+              The <a href="/about">About page</a> should explain who I am, what
+              I am learning, my current experience level, and how my development
+              and SEO interests connect. It should remain honest about the
+              difference between professional experience, coursework, personal
+              projects, and active learning.
+            </p>
+
+            <h3>Blog Articles</h3>
+            <p>
+              Each article should own one distinct informational intent. For
+              example,
+              <a href="/blog/seo-for-web-developers">SEO for Web Developers</a>
+              can remain the broad pillar, while
+              <a href="/blog/semantic-html-for-seo">Semantic HTML for SEO</a>
+              can explain meaningful HTML structure in depth. This article
+              should own the narrower intent around applying SEO to a developer
+              portfolio.
+            </p>
+
+            <h3>Contact Page</h3>
+            <p>
+              The <a href="/contact">Contact page</a> should focus on
+              conversion. It should explain which opportunities I am open to and
+              make it easy to contact me or review my work.
+            </p>
+          </section>
+
+          <section id="metadata">
+            <h2>2. Create Descriptive Titles and Metadata</h2>
+            <p>
+              Every important portfolio page should have a unique and
+              descriptive title. The page title, visible H1, and surrounding
+              copy should communicate the same subject without becoming
+              repetitive or stuffed with keywords.
+            </p>
+            <p>
+              The title communicates the person, current development role, and
+              geographic relevance. The description provides additional context,
+              but it should not be treated as guaranteed search-result copy
+              because search engines can generate snippets from visible page
+              content.
+            </p>
+            <p>
+              <strong>Important:</strong> Accuracy matters more than sounding
+              impressive. A junior developer should not use titles such as
+              “Nepal’s leading senior full-stack engineering expert” without
+              evidence that supports the claim.
+            </p>
+          </section>
+
+          <section id="semantic-html">
+            <h2>3. Use Semantic HTML and Clear Headings</h2>
+            <p>
+              A visually attractive page can still have a weak document
+              structure. Semantic HTML gives important page areas meaningful
+              roles and creates a clearer foundation for accessibility,
+              maintenance, and search interpretation.
+            </p>
+            <p>
+              The H1 communicates the primary page proposition. H2 headings
+              introduce major sections. Smaller headings describe individual
+              projects, skills, or experiences. My detailed
+              <a href="/blog/semantic-html-for-seo">semantic HTML guide</a>
+              contains the deeper explanation, while this article focuses on how
+              that structure supports a portfolio.
+            </p>
+          </section>
+
+          <section id="crawlable-navigation">
+            <h2>4. Make Navigation and Internal Links Crawlable</h2>
+            <p>
+              Navigation should work as real navigation. A link should take the
+              visitor to another location, while a button should perform an
+              action.
+            </p>
+            <p>
+              Internal links should create meaningful relationships between
+              projects and technical articles. The homepage should link to
+              About, Projects, Blog, and Contact. Articles should link to
+              related articles and relevant projects. Project pages should link
+              back to articles that explain the technology or decisions used in
+              the project.
+            </p>
+          </section>
+
+          <section id="personal-entity">
+            <h2>5. Build a Consistent Personal Entity</h2>
+            <p>
+              A personal portfolio represents a person as well as a collection
+              of webpages. Search engines and AI systems should encounter
+              consistent information about my name, current career level,
+              location, technical interests, projects, GitHub profile, and
+              professional goals.
+            </p>
+            <p>
+              Consistency does not require repeating the same sentence on every
+              page. The homepage can provide concise positioning. The About page
+              can explain the background. Project pages can demonstrate
+              practical application. Articles can show technical understanding.
+              GitHub can provide code-level evidence.
+            </p>
+          </section>
+
+          <section id="project-evidence">
+            <h2>6. Present Projects With Evidence</h2>
+            <p>
+              A project card containing only a title, screenshot, and list of
+              technologies gives recruiters limited information. A useful
+              project page should explain:
+            </p>
+            <ul>
+              <li>What was built and who it was designed for</li>
+              <li>What problem it solves</li>
+              <li>Which technologies were used</li>
+              <li>Which parts I personally implemented</li>
+              <li>What challenges occurred</li>
+              <li>
+                How responsiveness, accessibility, and SEO were considered
+              </li>
+              <li>Where the source code can be reviewed</li>
+              <li>What I would improve next</li>
+            </ul>
+          </section>
+
+          <section id="image-optimization">
+            <h2>7. Optimize Portfolio Images</h2>
+            <p>
+              Portfolio websites often contain large screenshots, mockups,
+              profile images, and decorative graphics. Unoptimized images can
+              make a simple site slow.
+            </p>
+            <p>
+              A useful portfolio image should have an appropriate format, a
+              sensible displayed size, descriptive alternative text when
+              informative, empty alt text when decorative, and explicit
+              dimensions to prevent layout shifts.
+            </p>
+          </section>
+
+          <section id="performance">
+            <h2>8. Protect Performance and Core Web Vitals</h2>
+            <p>
+              A portfolio acts as a demonstration of frontend ability. Slow
+              animations, oversized images, and unnecessary JavaScript can
+              damage user experience and professional credibility.
+            </p>
+            <p>
+              Useful practices include compressing screenshots, reducing
+              third-party scripts, loading non-critical JavaScript with
+              <code>defer</code>, limiting font weights, reserving image
+              dimensions, and respecting reduced-motion preferences.
+            </p>
+          </section>
+
+          <section id="structured-data">
+            <h2>9. Add Accurate Structured Data</h2>
+            <p>
+              Structured data helps search engines understand the relationship
+              between an article, its author, and the website. For this page,
+              <code>BlogPosting</code> is the most appropriate primary type.
+            </p>
+            <p>
+              Structured data should not contain fake reviews, invented job
+              titles, unverified awards, false dates, or skills that cannot be
+              supported. It should clarify visible information, not manufacture
+              authority.
+            </p>
+          </section>
+
+          <section id="canonical-indexing">
+            <h2>10. Include Canonical and Indexing Controls</h2>
+            <p>
+              Every article should identify its preferred URL. The page should
+              also return a successful status code, avoid an accidental
+              <code>noindex</code>, appear in the XML sitemap, be linked from
+              the blog listing, and use the preferred protocol and hostname
+              consistently.
+            </p>
+          </section>
+
+          <section id="github-connections">
+            <h2>11. Connect Portfolio With GitHub &amp; Profiles</h2>
+            <p>
+              A portfolio claim becomes stronger when visitors can verify it. A
+              project page should link to the live project, repository, and
+              relevant documentation. The repository should link back to the
+              portfolio case study and live deployment.
+            </p>
+            <p>
+              This creates a useful relationship between identity, explanation,
+              and evidence. The portfolio, resume, GitHub profile, and
+              professional profiles should also use consistent name and role
+              information.
+            </p>
+          </section>
+
+          <section id="measurement">
+            <h2>12. Measure Results Without Inventing Success</h2>
+            <p>
+              Publishing an optimized portfolio does not prove that it ranks,
+              attracts recruiters, or generates interviews. Those outcomes must
+              be measured using tools like Google Search Console, analytics, and
+              recruiter engagement metrics.
+            </p>
+          </section>
+
+          <section id="checklist">
+            <h2>Developer Portfolio SEO Checklist</h2>
+            <h3>Identity and page structure</h3>
+            <ul>
+              <li>
+                The developer’s real name and accurate professional role are
+                visible.
+              </li>
+              <li>Every important page has one clear purpose.</li>
+              <li>The homepage does not compete with every blog article.</li>
+              <li>Project pages target project-specific topics.</li>
+              <li>The Contact page focuses on conversion.</li>
+            </ul>
+
+            <h3>Metadata and accessibility</h3>
+            <ul>
+              <li>
+                Every indexable page has a unique title and useful meta
+                description.
+              </li>
+              <li>The title and visible H1 describe the same topic.</li>
+              <li>The canonical points to the preferred URL.</li>
+              <li>Heading levels follow a logical order.</li>
+              <li>Links are used for navigation and buttons for actions.</li>
+              <li>
+                Keyboard focus is visible and images have appropriate alt text.
+              </li>
+            </ul>
+          </section>
+
+          <section id="faqs">
+            <h2>Frequently Asked Questions</h2>
+
+            <h3>What is developer portfolio SEO?</h3>
+            <p>
+              Developer portfolio SEO is the process of structuring and
+              optimizing a developer’s personal website so that search engines,
+              recruiters, and users can understand the developer’s identity,
+              skills, projects, and professional goals.
+            </p>
+
+            <h3>Does a developer portfolio need SEO?</h3>
+            <p>
+              A portfolio can exist without an SEO strategy, but SEO makes it
+              easier for search engines to discover and interpret its pages. The
+              same improvements—clear headings, fast loading, useful links, and
+              detailed projects—also improve the experience for recruiters.
+            </p>
+
+            <h3>
+              Is HTML, CSS and JavaScript enough for an SEO-friendly portfolio?
+            </h3>
+            <p>
+              Yes. A portfolio does not need a large framework to be
+              search-friendly. Plain HTML, CSS and JavaScript can provide
+              crawlable content, semantic structure, fast performance, and
+              complete metadata when implemented carefully.
+            </p>
+          </section>
+
+          <section class="related-reading-box">
+            <h3>Related Articles</h3>
+            <ul>
+              <li>
+                <a href="/blog/seo-for-web-developers"
+                  >SEO for Web Developers: 2026 Guide</a
+                >
+                - Learn how web developers can build fast, accessible, and
+                search-friendly websites.
+              </li>
+              <li>
+                <a href="/blog/semantic-html-for-seo"
+                  >Semantic HTML5 for Search Engine Optimization</a
+                >
+                - Discover how clean HTML hierarchy improves screen reader
+                accessibility and organic search indexing.
+              </li>
+              <li>
+                <a href="/blog/web-development-nepal"
+                  >Modern Web Development in Nepal</a
+                >
+                - Career roadmap, local tech stacks, and industry analysis for
+                developers in Nepal.
+              </li>
+            </ul>
+          </section>
+        </article>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-inner">
+        <div class="footer-top">
+          <div class="footer-brand">
+            <a href="/" class="footer-logo">Adrin<span>.</span></a>
+            <div
+              class="footer-location"
+              aria-label="Local time in Kathmandu, Nepal"
+            >
+              <span class="location-dot"></span>
+              <span>Kathmandu, NP</span>
+              <span class="footer-time" id="footer-local-time">--:-- NPT</span>
+            </div>
+          </div>
+
+          <nav class="footer-nav" aria-label="Footer navigation">
+            <div class="footer-group">
+              <span class="footer-heading">Navigation</span>
+              <ul class="footer-links">
+                <li><a href="/#projects">Work</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/blog">Writing</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/resume">Resume</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-group">
+              <span class="footer-heading">Connect &amp; Meta</span>
+              <ul class="footer-links">
+                <li>
+                  <a
+                    href="https://github.com/Adrinstha"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >GitHub</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in/adrin-shrestha/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >LinkedIn</a
+                  >
+                </li>
+                <li><a href="/accessibility">Accessibility</a></li>
+                <li><a href="/sitemap.xml" target="_blank">Sitemap</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2026 Adrin Shrestha. Built with semantic HTML, CSS &amp;
+            JavaScript.
+          </p>
+          <a
+            href="#top"
+            class="back-to-top"
+            id="back-to-top"
+            aria-label="Back to top of page"
+          >
+            <span>Back to top</span>
+            <svg
+              viewBox="0 0 24 24"
+              width="16"
+              height="16"
+              aria-hidden="true"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polyline points="18 15 12 9 6 15"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script defer data-cfasync="false" src="../script.js?v=2.2"></script>
+  </body>
+</html>
