@@ -29,3 +29,7 @@ This portfolio continues to evolve as I learn new technologies and build more pr
 ## Live Demo
 
 https://adrinshrestha.com.np
+
+## 📄 License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
